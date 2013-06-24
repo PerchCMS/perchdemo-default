@@ -1,0 +1,31 @@
+.layout-footer ul.social-links {
+    min-width: 160px;
+}
+
+.job-title {
+	font-style: italic;
+	margin: 0;
+}
+
+.staff-profile h3 {
+	margin-bottom: 0;
+}
+
+.staff-profile .photo {
+	float: left;
+	margin: 0 1.5em 1.5em 0;
+}
+
+.staff-profile .bio {
+	clear: left;
+}
+
+
+
+b {
+	font-weight: bold;
+}
+
+i {
+	font-style: italic;
+}

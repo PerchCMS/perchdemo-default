@@ -1,4 +1,4 @@
-<?php include('perch/runtime.php'); ?>
+<?php include('../perch/runtime.php'); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -25,9 +25,8 @@
 
 	<div class="wrapper cols1">
 		<div class="primary-content">		
-	 		<?php perch_content('Welcome message'); ?>
-	 		<?php perch_content('Feature image'); ?>
-			<?php perch_content('Feature boxes'); ?>
+			<?php perch_content('Intro'); ?>
+			<?php perch_content('Staff profiles'); ?>
 		</div>
 	</div>
 	<footer class="layout-footer">

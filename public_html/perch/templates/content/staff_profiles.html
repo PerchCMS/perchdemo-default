@@ -1,0 +1,23 @@
+<perch:before>
+<h2>Our People</h2>
+<div class="modules">
+</perch:before>
+
+	<div class="module staff-profile">
+		<perch:if exists="image">
+			<perch:content id="image" type="image" label="Photo"width="80" height="80" density="2" crop="true" order="6" output="tag" class="photo" />
+		<perch:else />
+			<img class="photo" src="http://www.gravatar.com/avatar/<perch:content id="email" type="email" label="Email address" required="true" order="4" hash="md5" />?s=160&amp;d=mm" width="80" height="80" />
+		</perch:if>
+		<h3>
+			<perch:content id="firstname" type="text" label="First name" required="true" title="true" order="1" />
+			<perch:content id="lastname" type="text" label="Last name" required="true" title="true" order="2" />
+		</h3>
+		<p class="job-title"><perch:content id="jobtitle" type="text" label="Job title" order="3" /></p>
+		<p class="email"><a href="mailto:<perch:content id="email" type="email" />">Email <perch:content id="firstname" type="text" /></a></p>
+		<div class="bio"><perch:content id="bio" type="textarea" label="Biography" editor="redactor" size="s" html="true" order="5" /></div>
+	</div>
+
+<perch:after>
+</div>
+</perch:after>

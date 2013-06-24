@@ -1,10 +1,8 @@
 <?php
 
     include('config.private.php');
-    
-    define('PERCH_TZ', 'UTC');
 
-   
+    define('PERCH_TZ', 'UTC');
 
     define('PERCH_LOGINPATH', '/perch');
     define('PERCH_PATH', str_replace(DIRECTORY_SEPARATOR.'config', '', dirname(__FILE__)));

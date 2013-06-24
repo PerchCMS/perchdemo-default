@@ -1,0 +1,7 @@
+<perch:help>These are displayed in the site footer.</perch:help>
+<ul class="social-links">
+	<perch:if exists="twitter"><li class="twitter"><a href="http://twitter.com/<perch:content id="twitter" type="text" label="Twitter username" replace="@|," />" rel="me">Twitter</a></li></perch:if>
+	<perch:if exists="facebook"><li class="facebook"><a href="http://facebook.com/<perch:content id="facebook" type="text" label="Facebook username" />" rel="me">Facebook</a></li></perch:if>
+	<perch:if exists="flickr"><li class="flickr"><a href="http://flickr.com/<perch:content id="flickr" type="text" label="Flickr username" />" rel="me">Flickr</a></li></perch:if>
+	<perch:if exists="linkedin"><li class="linkedin"><a href="http://www.linkedin.com/in/<perch:content id="linkedin" type="text" label="LinkedIn username" />" rel="me">LinkedIn</a></li></perch:if>
+</ul>
