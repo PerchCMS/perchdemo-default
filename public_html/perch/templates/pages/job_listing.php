@@ -17,7 +17,8 @@
 		<nav class="main-nav">
 			<?php
 				perch_pages_navigation(array(
-					'levels' => 1,
+					'from-path' => '/',
+					'levels'    => 1,
 					));
 			?>
 		</nav>
