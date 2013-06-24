@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-	<title><?php perch_content('Site title'); ?></title>
+	<title><?php perch_pages_title() ?> - <?php perch_content('Site title'); ?></title>
 	<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0" />
 	<?php perch_get_css(); ?>
 	<link rel="stylesheet" type="text/css" href="/css/demo.css" />
