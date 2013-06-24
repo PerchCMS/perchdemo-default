@@ -1,0 +1,24 @@
+<div class="wrapper cols2-nav-right">
+	<nav class="sidebar">
+		<h3>How to apply</h3>
+		<perch:content id="howtoapply" type="textarea" label="How to apply" size="m" editor="redactor" html="true" help="Give the candidate instructions as to how to apply for this role" required="true" order="6" />
+	</nav>
+	<div class="primary-content">		
+ 		<h1><perch:content id="title" type="text" label="Job title" required="true" order="1" title="true" /></h1>
+
+ 		<perch:content id="description" type="textarea" label="Description" size="xl" editor="redactor" html="true" required="true" order="2" />
+		
+		<perch:if exists="requirements">
+	 		<h2>Requirements</h2>
+	 		<perch:content id="requirements" type="textarea" label="Requirements" help="State the requirements for this role" size="m" editor="redactor" html="true" order="3" />
+	 	</perch:if>
+
+	 	<h2>Details</h2>
+
+		<ul>
+			<li><strong>Office:</strong> <perch:content id="office" label="Office" type="dataselect" page="/careers/index.php" region="Offices" options="title" order="4" /></li>
+			<li><strong>Salary:</strong> &pound;<perch:content id="salary" label="Annual salary (£)" type="text" replace="£|," required="true" order="5" /> per annum</li>
+			<li><strong>Application closing date:</strong> <perch:content id="deadline" label="Deadline" type="date" required="true" format="jS F Y" order="6" /></li>
+		</ul>
+	</div>
+</div>

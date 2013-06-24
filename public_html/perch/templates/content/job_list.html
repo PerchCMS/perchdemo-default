@@ -1,0 +1,14 @@
+<perch:if different="office">
+	<perch:if exists="perch_item_first"><perch:else /></ul></perch:if>
+	<h2><perch:content id="office" type="dataselect" /></h2>
+	<ul>
+</perch:if>
+
+<li>
+	<a href="<perch:content id="_page" />"><perch:content id="title" type="text" label="Job title" required="true" order="1" title="true" /></a> 
+	&pound;<perch:content id="salary" replace="£|," type="text" /> per annum - <em>(Closes <perch:content id="deadline" type="date" format="jS M Y" />)</em>
+</li>
+
+<perch:if exists="perch_item_last">
+	</ul>
+</perch:if>
