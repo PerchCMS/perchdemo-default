@@ -1,5 +1,5 @@
-perchdemo-default
-=================
+Perch Demo: Default site
+========================
 
 This is the very  simple demo site option which shows how Perch in a basic configuration would look.
 
