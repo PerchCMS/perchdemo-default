@@ -145,10 +145,14 @@ miu.ImageUpload = function()
 				},
 				data: {
 					upload: true,
-					image: !file_upload,
-					width: textarea.attr('data-width'),
-					height: textarea.attr('data-height'),
-					crop: textarea.attr('data-crop')
+					image:   !file_upload,
+					width: 	 textarea.attr('data-width'),
+					height:  textarea.attr('data-height'),
+					crop: 	 textarea.attr('data-crop'),
+					density: textarea.attr('data-density'),
+					quality: textarea.attr('data-quality'),
+					sharpen: textarea.attr('data-sharpen'),
+					bucket:  textarea.attr('data-bucket')
 				}
 			});
 			

@@ -1,30 +1,27 @@
-# ************************************************************
-# Sequel Pro SQL dump
-# Version 4096
-#
-# http://www.sequelpro.com/
-# http://code.google.com/p/sequel-pro/
-#
-# Host: localhost (MySQL 5.5.29)
-# Database: dbPerchDemoDefault
-# Generation Time: 2013-06-24 10:33:11 +0000
-# ************************************************************
-
+-- MySQL dump 10.13  Distrib 5.5.33, for osx10.6 (i386)
+--
+-- Host: localhost    Database: dbPerchDemoDefault
+-- ------------------------------------------------------
+-- Server version	5.5.33
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-
-# Dump of table perch2_content_index
-# ------------------------------------------------------------
+--
+-- Table structure for table `perch2_content_index`
+--
 
 DROP TABLE IF EXISTS `perch2_content_index`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `perch2_content_index` (
   `indexID` int(10) NOT NULL AUTO_INCREMENT,
   `itemID` int(10) NOT NULL DEFAULT '0',
@@ -40,191 +37,193 @@ CREATE TABLE `perch2_content_index` (
   KEY `idx_item` (`itemID`),
   KEY `idx_keyval` (`indexKey`,`indexValue`),
   KEY `idx_regrev` (`regionID`,`itemRev`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1760 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `perch2_content_index`
+--
 
 LOCK TABLES `perch2_content_index` WRITE;
 /*!40000 ALTER TABLE `perch2_content_index` DISABLE KEYS */;
-
-INSERT INTO `perch2_content_index` (`indexID`, `itemID`, `regionID`, `pageID`, `itemRev`, `indexKey`, `indexValue`)
-VALUES
-	(4,1,3,2,2,'_id','1'),
-	(3,1,3,2,2,'text','Demo website'),
-	(5,1,3,2,2,'_order','1000'),
-	(11,2,4,2,2,'_order','1000'),
-	(10,2,4,2,2,'_id','2'),
-	(9,2,4,2,2,'text','Perch CMS'),
-	(48,3,5,2,4,'_order','1000'),
-	(47,3,5,2,4,'_id','3'),
-	(46,3,5,2,4,'text_processed','<p>You can start off by editing this text. <a href=\"/perch\">Log in</a> to the Perch control panel, and you&#8217;ll find this as <em>Welcome message</em> on the <em>Home page</em>.</p>\n\n<p>For this text, we&#8217;ve chosen to edit it using the Textile for'),
-	(45,3,5,2,4,'text_raw','You can start off by editing this text. \"Log in\":/perch to the Perch control panel, and you\'ll find this as _Welcome message_ on the _Home page_.\r\n\r\nFor this text, we\'ve chosen to edit it using the Textile formatting language. It\'s text-based and easier t'),
-	(44,3,5,2,4,'text','<p>You can start off by editing this text. <a href=\"/perch\">Log in</a> to the Perch control panel, and you&#8217;ll find this as <em>Welcome message</em> on the <em>Home page</em>.</p>\n\n<p>For this text, we&#8217;ve chosen to edit it using the Textile for'),
-	(43,3,5,2,4,'heading','Welcome to your Perch demo site!'),
-	(113,4,6,2,7,'_order','1000'),
-	(112,4,6,2,7,'_id','4'),
-	(111,4,6,2,7,'caption_processed','<p>This is an image displayed using the HTML5 <code>figure</code> element. It&#8217;s been set at a width of 680px so any image uploades will be scaled to match. It&#8217;s also set to double pixel density, which makes it perfect for high-<span class=\"cap'),
-	(110,4,6,2,7,'caption_raw','This is an image displayed using the HTML5 @figure@ element. It\'s been set at a width of 680px so any image uploades will be scaled to match. It\'s also set to double pixel density, which makes it perfect for high-DPI screens. Content managed, retina-ready'),
-	(109,4,6,2,7,'caption','<p>This is an image displayed using the HTML5 <code>figure</code> element. It&#8217;s been set at a width of 680px so any image uploades will be scaled to match. It&#8217;s also set to double pixel density, which makes it perfect for high-<span class=\"cap'),
-	(108,4,6,2,7,'heading','Streamers everywhere!'),
-	(107,4,6,2,7,'image_h','933'),
-	(106,4,6,2,7,'image_w','1400'),
-	(105,4,6,2,7,'image_bucket','default'),
-	(104,4,6,2,7,'image_size','384001'),
-	(103,4,6,2,7,'image_path','img1896.jpg'),
-	(102,4,6,2,7,'image__default','/perch/resources/img1896.jpg'),
-	(101,4,6,2,7,'image','/perch/resources/img1896.jpg'),
-	(232,8,9,2,7,'_order','1002'),
-	(231,8,9,2,7,'_id','8'),
-	(230,8,9,2,7,'text_processed','<p>Have some fun! You can add as many of these as you want. And they&#8217;re totally free! Aren&#8217;t we generous?</p>'),
-	(229,8,9,2,7,'text_raw','Have some fun! You can add as many of these as you want. And they\'re totally free! Aren\'t we generous?'),
-	(228,8,9,2,7,'text','<p>Have some fun! You can add as many of these as you want. And they&#8217;re totally free! Aren&#8217;t we generous?</p>'),
-	(227,8,9,2,7,'heading','Add some boxes'),
-	(226,7,9,2,7,'_order','1001'),
-	(225,7,9,2,7,'_id','7'),
-	(224,7,9,2,7,'text_processed','<p>This box links to the video tutorial. We try to provide both text and videos, as different people like to learn in different ways.</p>'),
-	(223,7,9,2,7,'text_raw','This box links to the video tutorial. We try to provide both text and videos, as different people like to learn in different ways.'),
-	(222,7,9,2,7,'text','<p>This box links to the video tutorial. We try to provide both text and videos, as different people like to learn in different ways.</p>'),
-	(221,7,9,2,7,'url','http://docs.grabaperch.com/video/'),
-	(220,7,9,2,7,'heading','See our video tutorial'),
-	(219,6,9,2,7,'_order','1000'),
-	(218,6,9,2,7,'_id','6'),
-	(217,6,9,2,7,'text_processed','<p>I can add lots of these boxes, optionally with a link on the heading. It uses Textile, so I can do <strong>bold</strong> and <em>italic</em> and so on.</p>'),
-	(216,6,9,2,7,'text_raw','I can add lots of these boxes, optionally with a link on the heading. It uses Textile, so I can do *bold* and _italic_ and so on.'),
-	(215,6,9,2,7,'text','<p>I can add lots of these boxes, optionally with a link on the heading. It uses Textile, so I can do <strong>bold</strong> and <em>italic</em> and so on.</p>'),
-	(214,6,9,2,7,'heading','This is a feature!'),
-	(264,9,10,2,4,'_order','1000'),
-	(263,9,10,2,4,'_id','9'),
-	(262,9,10,2,4,'alt','Your Logo Here'),
-	(261,9,10,2,4,'image_h','55'),
-	(260,9,10,2,4,'image_w','260'),
-	(259,9,10,2,4,'image_bucket','default'),
-	(258,9,10,2,4,'image_size','3675'),
-	(257,9,10,2,4,'image_path','logo.png'),
-	(256,9,10,2,4,'image__default','/perch/resources/logo.png'),
-	(255,9,10,2,4,'image','/perch/resources/logo.png'),
-	(308,10,11,2,12,'_order','1000'),
-	(307,10,11,2,12,'_id','10'),
-	(306,10,11,2,12,'facebook','grabaperch'),
-	(305,10,11,2,12,'twitter','@grabaperch'),
-	(1045,11,12,3,9,'_order','1000'),
-	(1044,11,12,3,9,'_id','11'),
-	(1043,11,12,3,9,'text_processed','<p>Perch is really big on what we call <em>structured content</em>. This is what makes Perch different from other small <span class=\"caps\">CMS</span> options. We recognise that not all content is the shape of a blog post &#8212; most things have finer det'),
-	(1042,11,12,3,9,'text_raw','Perch is really big on what we call _structured content_. This is what makes Perch different from other small CMS options. We recognise that not all content is the shape of a blog post -- most things have finer detail than that.\r\n\r\nTake the example of a l'),
-	(1041,11,12,3,9,'text','<p>Perch is really big on what we call <em>structured content</em>. This is what makes Perch different from other small <span class=\"caps\">CMS</span> options. We recognise that not all content is the shape of a blog post &#8212; most things have finer det'),
-	(1040,11,12,3,9,'heading','Let\'s talk about templates'),
-	(1039,14,13,3,22,'_order','1002'),
-	(1038,14,13,3,22,'_id','14'),
-	(1037,14,13,3,22,'bio_processed','<p>That\'s you! Try adding some more, it\'s fun! <i>(It may not actually be fun.)</i></p>'),
-	(1036,14,13,3,22,'bio_raw','<p>That\'s you! Try adding some more, it\'s fun! <i>(It may not actually be fun.)</i></p>'),
-	(1035,14,13,3,22,'bio','<p>That\'s you! Try adding some more, it\'s fun! <i>(It may not actually be fun.)</i></p>'),
-	(1034,14,13,3,22,'email','{email}'),
-	(1033,14,13,3,22,'jobtitle','Intern'),
-	(1032,14,13,3,22,'lastname','{lastname}'),
-	(1031,14,13,3,22,'firstname','{firstname}'),
-	(1030,12,13,3,22,'_order','1001'),
-	(1029,12,13,3,22,'_id','12'),
-	(1028,12,13,3,22,'image_h','320'),
-	(1027,12,13,3,22,'image_w','320'),
-	(1026,12,13,3,22,'image_bucket','default'),
-	(1025,12,13,3,22,'image_size','17064'),
-	(1024,12,13,3,22,'image_path','drewm.jpg'),
-	(1023,12,13,3,22,'image__default','/perch/resources/drewm.jpg'),
-	(1022,12,13,3,22,'image','/perch/resources/drewm.jpg'),
-	(1021,12,13,3,22,'bio_processed','<p>This is a brief bio, using the Redactor editor. It has <b>bold</b>&nbsp;and <i>italic </i>and so on.</p>'),
-	(1020,12,13,3,22,'bio_raw','<p>This is a brief bio, using the Redactor editor. It has <b>bold</b>&nbsp;and <i>italic </i>and so on.</p>'),
-	(1019,12,13,3,22,'bio','<p>This is a brief bio, using the Redactor editor. It has <b>bold</b>&nbsp;and <i>italic </i>and so on.</p>'),
-	(1018,12,13,3,22,'email','hello@grabaperch.com'),
-	(1017,12,13,3,22,'jobtitle','Director'),
-	(1016,12,13,3,22,'lastname','McLellan'),
-	(1015,12,13,3,22,'firstname','Drew'),
-	(1014,13,13,3,22,'_order','1000'),
-	(1013,13,13,3,22,'_id','13'),
-	(1012,13,13,3,22,'image_h','320'),
-	(1011,13,13,3,22,'image_w','320'),
-	(1010,13,13,3,22,'image_bucket','default'),
-	(1009,13,13,3,22,'image_size','23652'),
-	(1008,13,13,3,22,'image_path','rachel.jpg'),
-	(1007,13,13,3,22,'image__default','/perch/resources/rachel.jpg'),
-	(1006,13,13,3,22,'image','/perch/resources/rachel.jpg'),
-	(1005,13,13,3,22,'bio_processed','<p>This is another brief biography. It\'s very exciting, you have to admit.</p>'),
-	(1004,13,13,3,22,'bio_raw','<p>This is another brief biography. It\'s very exciting, you have to admit.</p>'),
-	(1003,13,13,3,22,'bio','<p>This is another brief biography. It\'s very exciting, you have to admit.</p>'),
-	(1002,13,13,3,22,'email','info@edgeofmyseat.com'),
-	(1001,13,13,3,22,'jobtitle','Managing Director'),
-	(1000,13,13,3,22,'lastname','Andrew'),
-	(999,13,13,3,22,'firstname','Rachel'),
-	(1093,15,14,4,8,'_order','1000'),
-	(1092,15,14,4,8,'_id','15'),
-	(1091,15,14,4,8,'text_processed','<p>Although it can be used in lots of different ways, Perch is at its best when critical decisions about site structure and information architecture are made by the web designer, and then set up for the client to work with. Adding new pages to a site is g'),
-	(1090,15,14,4,8,'text_raw','Although it can be used in lots of different ways, Perch is at its best when critical decisions about site structure and information architecture are made by the web designer, and then set up for the client to work with. Adding new pages to a site is grea'),
-	(1089,15,14,4,8,'text','<p>Although it can be used in lots of different ways, Perch is at its best when critical decisions about site structure and information architecture are made by the web designer, and then set up for the client to work with. Adding new pages to a site is g'),
-	(1088,15,14,4,8,'heading','Work with us'),
-	(1113,17,15,4,3,'_order','1001'),
-	(1112,17,15,4,3,'_id','17'),
-	(1111,17,15,4,3,'slug','new-york'),
-	(1110,17,15,4,3,'title','New York'),
-	(1109,16,15,4,3,'_order','1000'),
-	(1108,16,15,4,3,'_id','16'),
-	(1107,16,15,4,3,'slug','london'),
-	(1106,16,15,4,3,'title','London'),
-	(1114,18,15,4,3,'title','Paris'),
-	(1115,18,15,4,3,'slug','paris'),
-	(1116,18,15,4,3,'_id','18'),
-	(1117,18,15,4,3,'_order','1002'),
-	(1222,19,16,5,7,'_order','1000'),
-	(1221,19,16,5,7,'_id','19'),
-	(1220,19,16,5,7,'howtoapply_processed','<p>Email a CV and covering letter to <a href=\"mailto:jobs@grabaperch.com\">jobs@grabaperch.com</a>.&nbsp;</p><p><b>Do not call in person.</b></p>'),
-	(1219,19,16,5,7,'howtoapply_raw','<p>Email a CV and covering letter to <a href=\"mailto:jobs@grabaperch.com\">jobs@grabaperch.com</a>.&nbsp;</p><p><b>Do not call in person.</b></p>'),
-	(1218,19,16,5,7,'howtoapply','<p>Email a CV and covering letter to <a href=\"mailto:jobs@grabaperch.com\">jobs@grabaperch.com</a>.&nbsp;</p><p><b>Do not call in person.</b></p>'),
-	(1217,19,16,5,7,'deadline','2014-11-24'),
-	(1216,19,16,5,7,'salary','6,000'),
-	(1215,19,16,5,7,'office','London'),
-	(1214,19,16,5,7,'requirements_processed','<p><ul><li>12 months experience with websites</li><li>Knowledge of website content</li><li>A team player <i>(you don\'t have to play in any teams)</i></li></ul></p>'),
-	(1213,19,16,5,7,'requirements_raw','<p><ul><li>12 months experience with websites</li><li>Knowledge of website content</li><li>A team player <i>(you don\'t have to play in any teams)</i></li></ul></p>'),
-	(1212,19,16,5,7,'requirements','<p><ul><li>12 months experience with websites</li><li>Knowledge of website content</li><li>A team player <i>(you don\'t have to play in any teams)</i></li></ul></p>'),
-	(1211,19,16,5,7,'description_processed','<p>You\'ll be required to edit content on a number of websites. If you\'re the sort of person who likes websites, loves content and wishes that there was some way that they could be combined into the perfect job for you, then this may be the perfect job for'),
-	(1210,19,16,5,7,'description_raw','<p>You\'ll be required to edit content on a number of websites. If you\'re the sort of person who likes websites, loves content and wishes that there was some way that they could be combined into the perfect job for you, then this may be the perfect job for'),
-	(1209,19,16,5,7,'description','<p>You\'ll be required to edit content on a number of websites. If you\'re the sort of person who likes websites, loves content and wishes that there was some way that they could be combined into the perfect job for you, then this may be the perfect job for'),
-	(1208,19,16,5,7,'title','Content Editor'),
-	(1223,20,17,6,1,'title','Window Cleaner'),
-	(1224,20,17,6,1,'description','<p>You\'ll be required to clean the windows of our extensive Paris office, which is entirely glazed. Working hours are 8am to 8pm with a 20 minute break for lunch.</p><p>The views are spectacular! (Or they will be, once you\'ve cleaned the windows.)</p>'),
-	(1225,20,17,6,1,'description_raw','<p>You\'ll be required to clean the windows of our extensive Paris office, which is entirely glazed. Working hours are 8am to 8pm with a 20 minute break for lunch.</p><p>The views are spectacular! (Or they will be, once you\'ve cleaned the windows.)</p>'),
-	(1226,20,17,6,1,'description_processed','<p>You\'ll be required to clean the windows of our extensive Paris office, which is entirely glazed. Working hours are 8am to 8pm with a 20 minute break for lunch.</p><p>The views are spectacular! (Or they will be, once you\'ve cleaned the windows.)</p>'),
-	(1227,20,17,6,1,'requirements','<p><ul><li>A ladder</li><li>A squeegee</li><li>Mustn\'t be afraid of heights</li></ul></p>'),
-	(1228,20,17,6,1,'requirements_raw','<p><ul><li>A ladder</li><li>A squeegee</li><li>Mustn\'t be afraid of heights</li></ul></p>'),
-	(1229,20,17,6,1,'requirements_processed','<p><ul><li>A ladder</li><li>A squeegee</li><li>Mustn\'t be afraid of heights</li></ul></p>'),
-	(1230,20,17,6,1,'office','Paris'),
-	(1231,20,17,6,1,'salary','2,000'),
-	(1232,20,17,6,1,'deadline','2014-06-24'),
-	(1233,20,17,6,1,'howtoapply','<p>Hand deliver your CV to the 18th floor of our Paris office. We\'ve left the window open, so just pop it through.</p>'),
-	(1234,20,17,6,1,'howtoapply_raw','<p>Hand deliver your CV to the 18th floor of our Paris office. We\'ve left the window open, so just pop it through.</p>'),
-	(1235,20,17,6,1,'howtoapply_processed','<p>Hand deliver your CV to the 18th floor of our Paris office. We\'ve left the window open, so just pop it through.</p>'),
-	(1236,20,17,6,1,'_id','20'),
-	(1237,20,17,6,1,'_order','1000'),
-	(1238,21,18,7,1,'title','Doorman'),
-	(1239,21,18,7,1,'description','<p>You\'ll be required to greet and welcome guests as they arrive at our London office.&nbsp;</p><p>There\'s no hiding it, this job requires a lot of standing around.</p>'),
-	(1240,21,18,7,1,'description_raw','<p>You\'ll be required to greet and welcome guests as they arrive at our London office.&nbsp;</p><p>There\'s no hiding it, this job requires a lot of standing around.</p>'),
-	(1241,21,18,7,1,'description_processed','<p>You\'ll be required to greet and welcome guests as they arrive at our London office.&nbsp;</p><p>There\'s no hiding it, this job requires a lot of standing around.</p>'),
-	(1242,21,18,7,1,'requirements','<p><ul><li>2-3 experience with doors</li><li>Ability to stand for long periods</li><li>Look good in a hat</li></ul></p>'),
-	(1243,21,18,7,1,'requirements_raw','<p><ul><li>2-3 experience with doors</li><li>Ability to stand for long periods</li><li>Look good in a hat</li></ul></p>'),
-	(1244,21,18,7,1,'requirements_processed','<p><ul><li>2-3 experience with doors</li><li>Ability to stand for long periods</li><li>Look good in a hat</li></ul></p>'),
-	(1245,21,18,7,1,'office','London'),
-	(1246,21,18,7,1,'salary','3,000'),
-	(1247,21,18,7,1,'deadline','2015-10-26'),
-	(1248,21,18,7,1,'howtoapply','<p>Apply in person by delivering your CV to our current doorman. It\'ll cheer him up no end!</p>'),
-	(1249,21,18,7,1,'howtoapply_raw','<p>Apply in person by delivering your CV to our current doorman. It\'ll cheer him up no end!</p>'),
-	(1250,21,18,7,1,'howtoapply_processed','<p>Apply in person by delivering your CV to our current doorman. It\'ll cheer him up no end!</p>'),
-	(1251,21,18,7,1,'_id','21'),
-	(1252,21,18,7,1,'_order','1000');
-
+INSERT INTO `perch2_content_index` VALUES (1759,1,3,2,3,'_order','1000'),
+	(1758,1,3,2,3,'_id','1'),
+	(1757,1,3,2,3,'text','Demo website'),
+	(1594,2,4,2,2,'_order','1000'),
+	(1593,2,4,2,2,'_id','2'),
+	(1592,2,4,2,2,'text','Perch CMS'),
+	(1610,3,5,2,4,'_order','1000'),
+	(1609,3,5,2,4,'_id','3'),
+	(1608,3,5,2,4,'text_processed','<p>You can start off by editing this text. <a href=\"/perch\">Log in</a> to the Perch control panel, and you&#8217;ll find this as <em>Welcome message</em> on the <em>Home page</em>.</p>\n\n<p>For this text, we&#8217;ve chosen to edit it using the Textile for'),
+	(1607,3,5,2,4,'text_raw','You can start off by editing this text. \"Log in\":/perch to the Perch control panel, and you\'ll find this as _Welcome message_ on the _Home page_.\r\n\r\nFor this text, we\'ve chosen to edit it using the Textile formatting language. It\'s text-based and easier t'),
+	(1606,3,5,2,4,'text','<p>You can start off by editing this text. <a href=\"/perch\">Log in</a> to the Perch control panel, and you&#8217;ll find this as <em>Welcome message</em> on the <em>Home page</em>.</p>\n\n<p>For this text, we&#8217;ve chosen to edit it using the Textile for'),
+	(1605,3,5,2,4,'heading','Welcome to your Perch demo site!'),
+	(1680,4,6,2,7,'_order','1000'),
+	(1679,4,6,2,7,'_id','4'),
+	(1678,4,6,2,7,'caption_processed','<p>This is an image displayed using the HTML5 <code>figure</code> element. It&#8217;s been set at a width of 680px so any image uploades will be scaled to match. It&#8217;s also set to double pixel density, which makes it perfect for high-<span class=\"cap'),
+	(1677,4,6,2,7,'caption_raw','This is an image displayed using the HTML5 @figure@ element. It\'s been set at a width of 680px so any image uploades will be scaled to match. It\'s also set to double pixel density, which makes it perfect for high-DPI screens. Content managed, retina-ready'),
+	(1676,4,6,2,7,'caption','<p>This is an image displayed using the HTML5 <code>figure</code> element. It&#8217;s been set at a width of 680px so any image uploades will be scaled to match. It&#8217;s also set to double pixel density, which makes it perfect for high-<span class=\"cap'),
+	(1675,4,6,2,7,'heading','Streamers everywhere!'),
+	(1674,4,6,2,7,'image_h','933'),
+	(1673,4,6,2,7,'image_w','1400'),
+	(1672,4,6,2,7,'image_bucket','default'),
+	(1671,4,6,2,7,'image_size','384001'),
+	(1670,4,6,2,7,'image_path','img1896.jpg'),
+	(1669,4,6,2,7,'image__default','/perch/resources/img1896.jpg'),
+	(1668,4,6,2,7,'image','/perch/resources/img1896.jpg'),
+	(1752,8,9,2,7,'_order','1002'),
+	(1751,8,9,2,7,'_id','8'),
+	(1750,8,9,2,7,'text_processed','<p>Have some fun! You can add as many of these as you want. And they&#8217;re totally free! Aren&#8217;t we generous?</p>'),
+	(1749,8,9,2,7,'text_raw','Have some fun! You can add as many of these as you want. And they\'re totally free! Aren\'t we generous?'),
+	(1748,8,9,2,7,'text','<p>Have some fun! You can add as many of these as you want. And they&#8217;re totally free! Aren&#8217;t we generous?</p>'),
+	(1747,8,9,2,7,'heading','Add some boxes'),
+	(1746,7,9,2,7,'_order','1001'),
+	(1745,7,9,2,7,'_id','7'),
+	(1744,7,9,2,7,'text_processed','<p>This box links to the video tutorial. We try to provide both text and videos, as different people like to learn in different ways.</p>'),
+	(1743,7,9,2,7,'text_raw','This box links to the video tutorial. We try to provide both text and videos, as different people like to learn in different ways.'),
+	(1742,7,9,2,7,'text','<p>This box links to the video tutorial. We try to provide both text and videos, as different people like to learn in different ways.</p>'),
+	(1741,7,9,2,7,'url','http://docs.grabaperch.com/video/'),
+	(1740,7,9,2,7,'heading','See our video tutorial'),
+	(1739,6,9,2,7,'_order','1000'),
+	(1738,6,9,2,7,'_id','6'),
+	(1737,6,9,2,7,'text_processed','<p>I can add lots of these boxes, optionally with a link on the heading. It uses Textile, so I can do <strong>bold</strong> and <em>italic</em> and so on.</p>'),
+	(1736,6,9,2,7,'text_raw','I can add lots of these boxes, optionally with a link on the heading. It uses Textile, so I can do *bold* and _italic_ and so on.'),
+	(1735,6,9,2,7,'text','<p>I can add lots of these boxes, optionally with a link on the heading. It uses Textile, so I can do <strong>bold</strong> and <em>italic</em> and so on.</p>'),
+	(1734,6,9,2,7,'heading','This is a feature!'),
+	(1604,9,10,2,4,'_order','1000'),
+	(1603,9,10,2,4,'_id','9'),
+	(1602,9,10,2,4,'alt','Your Logo Here'),
+	(1601,9,10,2,4,'image_h','55'),
+	(1600,9,10,2,4,'image_w','260'),
+	(1599,9,10,2,4,'image_bucket','default'),
+	(1598,9,10,2,4,'image_size','3675'),
+	(1597,9,10,2,4,'image_path','logo.png'),
+	(1596,9,10,2,4,'image__default','/perch/resources/logo.png'),
+	(1595,9,10,2,4,'image','/perch/resources/logo.png'),
+	(1756,10,11,2,12,'_order','1000'),
+	(1755,10,11,2,12,'_id','10'),
+	(1754,10,11,2,12,'facebook','grabaperch'),
+	(1753,10,11,2,12,'twitter','@grabaperch'),
+	(1616,11,12,3,9,'_order','1000'),
+	(1615,11,12,3,9,'_id','11'),
+	(1614,11,12,3,9,'text_processed','<p>Perch is really big on what we call <em>structured content</em>. This is what makes Perch different from other small <span class=\"caps\">CMS</span> options. We recognise that not all content is the shape of a blog post &#8212; most things have finer det'),
+	(1613,11,12,3,9,'text_raw','Perch is really big on what we call _structured content_. This is what makes Perch different from other small CMS options. We recognise that not all content is the shape of a blog post -- most things have finer detail than that.\r\n\r\nTake the example of a l'),
+	(1612,11,12,3,9,'text','<p>Perch is really big on what we call <em>structured content</em>. This is what makes Perch different from other small <span class=\"caps\">CMS</span> options. We recognise that not all content is the shape of a blog post &#8212; most things have finer det'),
+	(1611,11,12,3,9,'heading','Let\'s talk about templates'),
+	(1721,14,13,3,22,'_order','1002'),
+	(1720,14,13,3,22,'_id','14'),
+	(1719,14,13,3,22,'bio_processed','<p>That\'s you! Try adding some more, it\'s fun! <i>(It may not actually be fun.)</i></p>'),
+	(1718,14,13,3,22,'bio_raw','<p>That\'s you! Try adding some more, it\'s fun! <i>(It may not actually be fun.)</i></p>'),
+	(1717,14,13,3,22,'bio','<p>That\'s you! Try adding some more, it\'s fun! <i>(It may not actually be fun.)</i></p>'),
+	(1716,14,13,3,22,'email','{email}'),
+	(1715,14,13,3,22,'jobtitle','Intern'),
+	(1714,14,13,3,22,'lastname','{lastname}'),
+	(1713,14,13,3,22,'firstname','{firstname}'),
+	(1712,12,13,3,22,'_order','1001'),
+	(1711,12,13,3,22,'_id','12'),
+	(1710,12,13,3,22,'image_h','320'),
+	(1709,12,13,3,22,'image_w','320'),
+	(1708,12,13,3,22,'image_bucket','default'),
+	(1707,12,13,3,22,'image_size','17064'),
+	(1706,12,13,3,22,'image_path','drewm.jpg'),
+	(1705,12,13,3,22,'image__default','/perch/resources/drewm.jpg'),
+	(1704,12,13,3,22,'image','/perch/resources/drewm.jpg'),
+	(1703,12,13,3,22,'bio_processed','<p>This is a brief bio, using the Redactor editor. It has <b>bold</b>&nbsp;and <i>italic </i>and so on.</p>'),
+	(1702,12,13,3,22,'bio_raw','<p>This is a brief bio, using the Redactor editor. It has <b>bold</b>&nbsp;and <i>italic </i>and so on.</p>'),
+	(1701,12,13,3,22,'bio','<p>This is a brief bio, using the Redactor editor. It has <b>bold</b>&nbsp;and <i>italic </i>and so on.</p>'),
+	(1700,12,13,3,22,'email','hello@grabaperch.com'),
+	(1699,12,13,3,22,'jobtitle','Director'),
+	(1698,12,13,3,22,'lastname','McLellan'),
+	(1697,12,13,3,22,'firstname','Drew'),
+	(1696,13,13,3,22,'_order','1000'),
+	(1695,13,13,3,22,'_id','13'),
+	(1694,13,13,3,22,'image_h','320'),
+	(1693,13,13,3,22,'image_w','320'),
+	(1692,13,13,3,22,'image_bucket','default'),
+	(1691,13,13,3,22,'image_size','23652'),
+	(1690,13,13,3,22,'image_path','rachel.jpg'),
+	(1689,13,13,3,22,'image__default','/perch/resources/rachel.jpg'),
+	(1688,13,13,3,22,'image','/perch/resources/rachel.jpg'),
+	(1687,13,13,3,22,'bio_processed','<p>This is another brief biography. It\'s very exciting, you have to admit.</p>'),
+	(1686,13,13,3,22,'bio_raw','<p>This is another brief biography. It\'s very exciting, you have to admit.</p>'),
+	(1685,13,13,3,22,'bio','<p>This is another brief biography. It\'s very exciting, you have to admit.</p>'),
+	(1684,13,13,3,22,'email','info@edgeofmyseat.com'),
+	(1683,13,13,3,22,'jobtitle','Managing Director'),
+	(1682,13,13,3,22,'lastname','Andrew'),
+	(1681,13,13,3,22,'firstname','Rachel'),
+	(1622,15,14,4,8,'_order','1000'),
+	(1621,15,14,4,8,'_id','15'),
+	(1620,15,14,4,8,'text_processed','<p>Although it can be used in lots of different ways, Perch is at its best when critical decisions about site structure and information architecture are made by the web designer, and then set up for the client to work with. Adding new pages to a site is g'),
+	(1619,15,14,4,8,'text_raw','Although it can be used in lots of different ways, Perch is at its best when critical decisions about site structure and information architecture are made by the web designer, and then set up for the client to work with. Adding new pages to a site is grea'),
+	(1618,15,14,4,8,'text','<p>Although it can be used in lots of different ways, Perch is at its best when critical decisions about site structure and information architecture are made by the web designer, and then set up for the client to work with. Adding new pages to a site is g'),
+	(1617,15,14,4,8,'heading','Work with us'),
+	(1733,18,15,4,3,'_order','1002'),
+	(1732,18,15,4,3,'_id','18'),
+	(1731,18,15,4,3,'slug','paris'),
+	(1730,18,15,4,3,'title','Paris'),
+	(1729,17,15,4,3,'_order','1001'),
+	(1728,17,15,4,3,'_id','17'),
+	(1727,17,15,4,3,'slug','new-york'),
+	(1726,17,15,4,3,'title','New York'),
+	(1725,16,15,4,3,'_order','1000'),
+	(1724,16,15,4,3,'_id','16'),
+	(1723,16,15,4,3,'slug','london'),
+	(1722,16,15,4,3,'title','London'),
+	(1637,19,16,5,7,'_order','1000'),
+	(1636,19,16,5,7,'_id','19'),
+	(1635,19,16,5,7,'howtoapply_processed','<p>Email a CV and covering letter to <a href=\"mailto:jobs@grabaperch.com\">jobs@grabaperch.com</a>.&nbsp;</p><p><b>Do not call in person.</b></p>'),
+	(1634,19,16,5,7,'howtoapply_raw','<p>Email a CV and covering letter to <a href=\"mailto:jobs@grabaperch.com\">jobs@grabaperch.com</a>.&nbsp;</p><p><b>Do not call in person.</b></p>'),
+	(1633,19,16,5,7,'howtoapply','<p>Email a CV and covering letter to <a href=\"mailto:jobs@grabaperch.com\">jobs@grabaperch.com</a>.&nbsp;</p><p><b>Do not call in person.</b></p>'),
+	(1632,19,16,5,7,'deadline','2014-11-24'),
+	(1631,19,16,5,7,'salary','6,000'),
+	(1630,19,16,5,7,'office','London'),
+	(1629,19,16,5,7,'requirements_processed','<p><ul><li>12 months experience with websites</li><li>Knowledge of website content</li><li>A team player <i>(you don\'t have to play in any teams)</i></li></ul></p>'),
+	(1628,19,16,5,7,'requirements_raw','<p><ul><li>12 months experience with websites</li><li>Knowledge of website content</li><li>A team player <i>(you don\'t have to play in any teams)</i></li></ul></p>'),
+	(1627,19,16,5,7,'requirements','<p><ul><li>12 months experience with websites</li><li>Knowledge of website content</li><li>A team player <i>(you don\'t have to play in any teams)</i></li></ul></p>'),
+	(1626,19,16,5,7,'description_processed','<p>You\'ll be required to edit content on a number of websites. If you\'re the sort of person who likes websites, loves content and wishes that there was some way that they could be combined into the perfect job for you, then this may be the perfect job for'),
+	(1625,19,16,5,7,'description_raw','<p>You\'ll be required to edit content on a number of websites. If you\'re the sort of person who likes websites, loves content and wishes that there was some way that they could be combined into the perfect job for you, then this may be the perfect job for'),
+	(1624,19,16,5,7,'description','<p>You\'ll be required to edit content on a number of websites. If you\'re the sort of person who likes websites, loves content and wishes that there was some way that they could be combined into the perfect job for you, then this may be the perfect job for'),
+	(1623,19,16,5,7,'title','Content Editor'),
+	(1652,20,17,6,1,'_order','1000'),
+	(1651,20,17,6,1,'_id','20'),
+	(1650,20,17,6,1,'howtoapply_processed','<p>Hand deliver your CV to the 18th floor of our Paris office. We\'ve left the window open, so just pop it through.</p>'),
+	(1649,20,17,6,1,'howtoapply_raw','<p>Hand deliver your CV to the 18th floor of our Paris office. We\'ve left the window open, so just pop it through.</p>'),
+	(1648,20,17,6,1,'howtoapply','<p>Hand deliver your CV to the 18th floor of our Paris office. We\'ve left the window open, so just pop it through.</p>'),
+	(1647,20,17,6,1,'deadline','2014-06-24'),
+	(1646,20,17,6,1,'salary','2,000'),
+	(1645,20,17,6,1,'office','Paris'),
+	(1644,20,17,6,1,'requirements_processed','<p><ul><li>A ladder</li><li>A squeegee</li><li>Mustn\'t be afraid of heights</li></ul></p>'),
+	(1643,20,17,6,1,'requirements_raw','<p><ul><li>A ladder</li><li>A squeegee</li><li>Mustn\'t be afraid of heights</li></ul></p>'),
+	(1642,20,17,6,1,'requirements','<p><ul><li>A ladder</li><li>A squeegee</li><li>Mustn\'t be afraid of heights</li></ul></p>'),
+	(1641,20,17,6,1,'description_processed','<p>You\'ll be required to clean the windows of our extensive Paris office, which is entirely glazed. Working hours are 8am to 8pm with a 20 minute break for lunch.</p><p>The views are spectacular! (Or they will be, once you\'ve cleaned the windows.)</p>'),
+	(1640,20,17,6,1,'description_raw','<p>You\'ll be required to clean the windows of our extensive Paris office, which is entirely glazed. Working hours are 8am to 8pm with a 20 minute break for lunch.</p><p>The views are spectacular! (Or they will be, once you\'ve cleaned the windows.)</p>'),
+	(1639,20,17,6,1,'description','<p>You\'ll be required to clean the windows of our extensive Paris office, which is entirely glazed. Working hours are 8am to 8pm with a 20 minute break for lunch.</p><p>The views are spectacular! (Or they will be, once you\'ve cleaned the windows.)</p>'),
+	(1638,20,17,6,1,'title','Window Cleaner'),
+	(1667,21,18,7,1,'_order','1000'),
+	(1666,21,18,7,1,'_id','21'),
+	(1665,21,18,7,1,'howtoapply_processed','<p>Apply in person by delivering your CV to our current doorman. It\'ll cheer him up no end!</p>'),
+	(1664,21,18,7,1,'howtoapply_raw','<p>Apply in person by delivering your CV to our current doorman. It\'ll cheer him up no end!</p>'),
+	(1663,21,18,7,1,'howtoapply','<p>Apply in person by delivering your CV to our current doorman. It\'ll cheer him up no end!</p>'),
+	(1662,21,18,7,1,'deadline','2015-10-26'),
+	(1661,21,18,7,1,'salary','3,000'),
+	(1660,21,18,7,1,'office','London'),
+	(1659,21,18,7,1,'requirements_processed','<p><ul><li>2-3 experience with doors</li><li>Ability to stand for long periods</li><li>Look good in a hat</li></ul></p>'),
+	(1658,21,18,7,1,'requirements_raw','<p><ul><li>2-3 experience with doors</li><li>Ability to stand for long periods</li><li>Look good in a hat</li></ul></p>'),
+	(1657,21,18,7,1,'requirements','<p><ul><li>2-3 experience with doors</li><li>Ability to stand for long periods</li><li>Look good in a hat</li></ul></p>'),
+	(1656,21,18,7,1,'description_processed','<p>You\'ll be required to greet and welcome guests as they arrive at our London office.&nbsp;</p><p>There\'s no hiding it, this job requires a lot of standing around.</p>'),
+	(1655,21,18,7,1,'description_raw','<p>You\'ll be required to greet and welcome guests as they arrive at our London office.&nbsp;</p><p>There\'s no hiding it, this job requires a lot of standing around.</p>'),
+	(1654,21,18,7,1,'description','<p>You\'ll be required to greet and welcome guests as they arrive at our London office.&nbsp;</p><p>There\'s no hiding it, this job requires a lot of standing around.</p>'),
+	(1653,21,18,7,1,'title','Doorman');
 /*!40000 ALTER TABLE `perch2_content_index` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-# Dump of table perch2_content_items
-# ------------------------------------------------------------
+--
+-- Table structure for table `perch2_content_items`
+--
 
 DROP TABLE IF EXISTS `perch2_content_items`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `perch2_content_items` (
   `itemRowID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `itemID` int(10) unsigned NOT NULL DEFAULT '0',
@@ -241,20 +240,22 @@ CREATE TABLE `perch2_content_items` (
   KEY `idx_regrev` (`itemID`,`regionID`,`itemRev`),
   KEY `idx_order` (`itemOrder`),
   FULLTEXT KEY `idx_search` (`itemSearch`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=144 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `perch2_content_items`
+--
 
 LOCK TABLES `perch2_content_items` WRITE;
 /*!40000 ALTER TABLE `perch2_content_items` DISABLE KEYS */;
-
-INSERT INTO `perch2_content_items` (`itemRowID`, `itemID`, `regionID`, `pageID`, `itemRev`, `itemOrder`, `itemJSON`, `itemSearch`)
-VALUES
-	(3,1,3,2,2,1000,'{\"_id\":\"1\",\"text\":\"Demo website\",\"_title\":\"Demo website\"}',' Demo website '),
-	(6,2,4,2,2,1000,'{\"_id\":\"2\",\"text\":\"Perch CMS\",\"_title\":\"Perch CMS\"}',' Perch CMS '),
+INSERT INTO `perch2_content_items` VALUES (6,2,4,2,2,1000,'{\"_id\":\"2\",\"text\":\"Perch CMS\",\"_title\":\"Perch CMS\"}',' Perch CMS '),
 	(40,8,9,2,7,1002,'{\"_id\":\"8\",\"heading\":\"Add some boxes\",\"_title\":\"Add some boxes\",\"text\":{\"raw\":\"Have some fun! You can add as many of these as you want. And they\'re totally free! Aren\'t we generous?\",\"processed\":\"<p>Have some fun! You can add as many of these as you want. And they&#8217;re totally free! Aren&#8217;t we generous?<\\/p>\"}}',' Add some boxes  Have some fun! You can add as many of these as you want. And they&#8217;re totally free! Aren&#8217;t we generous? '),
 	(20,4,6,2,7,1000,'{\"_id\":\"4\",\"image\":{\"_default\":\"\\/perch\\/resources\\/img1896.jpg\",\"path\":\"img1896.jpg\",\"size\":384001,\"bucket\":\"default\",\"w\":1400,\"h\":933,\"sizes\":{\"thumb\":{\"w\":150,\"h\":99,\"path\":\"img1896-thumb.jpg\",\"size\":9213,\"mime\":\"image\\/jpeg\"},\"w680hc0@2x\":{\"w\":680,\"h\":453,\"density\":\"2\",\"path\":\"img1896-w680@2x.jpg\",\"size\":198084,\"mime\":\"image\\/jpeg\"}}},\"heading\":\"Streamers everywhere!\",\"_title\":\"Streamers everywhere!\",\"caption\":{\"raw\":\"This is an image displayed using the HTML5 @figure@ element. It\'s been set at a width of 680px so any image uploades will be scaled to match. It\'s also set to double pixel density, which makes it perfect for high-DPI screens. Content managed, retina-ready images - if you want them.\",\"processed\":\"<p>This is an image displayed using the HTML5 <code>figure<\\/code> element. It&#8217;s been set at a width of 680px so any image uploades will be scaled to match. It&#8217;s also set to double pixel density, which makes it perfect for high-<span class=\\\"caps\\\">DPI<\\/span> screens. Content managed, retina-ready images &#8211; if you want them.<\\/p>\"}}','  Streamers everywhere! This is an image displayed using the HTML5 figure element. It&#8217;s been set at a width of 680px so any image uploades will be scaled to match. It&#8217;s also set to double pixel density, which makes it perfect for high-DPI screens. Content managed, retina-ready images &#8211; if you want them. '),
 	(121,15,14,4,8,1000,'{\"_id\":\"15\",\"heading\":\"Work with us\",\"_title\":\"Work with us\",\"text\":{\"raw\":\"Although it can be used in lots of different ways, Perch is at its best when critical decisions about site structure and information architecture are made by the web designer, and then set up for the client to work with. Adding new pages to a site is great, but it\'s usually best done within a framework and not haphazardly.\\r\\n\\r\\nThis section has been set up with this approach in mind. Add a new subpage to the Careers page (hover over Careers in the page listing, and click _New subpage_) to add a new job listing page. The pages will then be summarised below.\",\"processed\":\"<p>Although it can be used in lots of different ways, Perch is at its best when critical decisions about site structure and information architecture are made by the web designer, and then set up for the client to work with. Adding new pages to a site is great, but it&#8217;s usually best done within a framework and not haphazardly.<\\/p>\\n\\n<p>This section has been set up with this approach in mind. Add a new subpage to the Careers page (hover over Careers in the page listing, and click <em>New subpage<\\/em>) to add a new job listing page. The pages will then be summarised below.<\\/p>\"}}',' Work with us Although it can be used in lots of different ways, Perch is at its best when critical decisions about site structure and information architecture are made by the web designer, and then set up for the client to work with. Adding new pages to a site is great, but it&#8217;s usually best done within a framework and not haphazardly.\n\nThis section has been set up with this approach in mind. Add a new subpage to the Careers page (hover over Careers in the page listing, and click New subpage) to add a new job listing page. The pages will then be summarised below. '),
 	(38,6,9,2,7,1000,'{\"_id\":\"6\",\"heading\":\"This is a feature!\",\"_title\":\"This is a feature!\",\"text\":{\"raw\":\"I can add lots of these boxes, optionally with a link on the heading. It uses Textile, so I can do *bold* and _italic_ and so on.\",\"processed\":\"<p>I can add lots of these boxes, optionally with a link on the heading. It uses Textile, so I can do <strong>bold<\\/strong> and <em>italic<\\/em> and so on.<\\/p>\"}}',' This is a feature!  I can add lots of these boxes, optionally with a link on the heading. It uses Textile, so I can do bold and italic and so on. '),
 	(13,3,5,2,4,1000,'{\"_id\":\"3\",\"heading\":\"Welcome to your Perch demo site!\",\"_title\":\"Welcome to your Perch demo site!\",\"text\":{\"raw\":\"You can start off by editing this text. \\\"Log in\\\":\\/perch to the Perch control panel, and you\'ll find this as _Welcome message_ on the _Home page_.\\r\\n\\r\\nFor this text, we\'ve chosen to edit it using the Textile formatting language. It\'s text-based and easier to write than HTML, but still enables you to do text formatting, links, headings and so on. It\'s good at focussing the user on the _content_ and not on the _presentation_.\\r\\n\\r\\nPerch also supports Markdown, and has add-ons for common WYSIWYG editors such as:\\r\\n\\r\\n* CKEditor\\r\\n* Redactor\\r\\n* TinyMCE\\r\\n* Ace\\r\\n\\r\\nWe\'ll look at some of those later. First, how about some images.\",\"processed\":\"<p>You can start off by editing this text. <a href=\\\"\\/perch\\\">Log in<\\/a> to the Perch control panel, and you&#8217;ll find this as <em>Welcome message<\\/em> on the <em>Home page<\\/em>.<\\/p>\\n\\n<p>For this text, we&#8217;ve chosen to edit it using the Textile formatting language. It&#8217;s text-based and easier to write than <span class=\\\"caps\\\">HTML<\\/span>, but still enables you to do text formatting, links, headings and so on. It&#8217;s good at focussing the user on the <em>content<\\/em> and not on the <em>presentation<\\/em>.<\\/p>\\n\\n<p>Perch also supports Markdown, and has add-ons for common <span class=\\\"caps\\\">WYSIWYG<\\/span> editors such as:<\\/p>\\n\\n\\t<ul>\\n\\t\\t<li><span class=\\\"caps\\\">CKE<\\/span>ditor<\\/li>\\n\\t\\t<li>Redactor<\\/li>\\n\\t\\t<li>TinyMCE<\\/li>\\n\\t\\t<li>Ace<\\/li>\\n\\t<\\/ul>\\n\\n<p>We&#8217;ll look at some of those later. First, how about some images.<\\/p>\"}}',' Welcome to your Perch demo site! You can start off by editing this text. Log in to the Perch control panel, and you&#8217;ll find this as Welcome message on the Home page.\n\nFor this text, we&#8217;ve chosen to edit it using the Textile formatting language. It&#8217;s text-based and easier to write than HTML, but still enables you to do text formatting, links, headings and so on. It&#8217;s good at focussing the user on the content and not on the presentation.\n\nPerch also supports Markdown, and has add-ons for common WYSIWYG editors such as:\n\n	\n		CKEditor\n		Redactor\n		TinyMCE\n		Ace\n	\n\nWe&#8217;ll look at some of those later. First, how about some images. '),
+	(143,1,3,2,3,1000,'{\"_id\":\"1\",\"text\":\"Demo website\",\"_title\":\"Demo website\"}',' Demo website '),
 	(45,9,10,2,4,1000,'{\"_id\":\"9\",\"image\":{\"_default\":\"\\/perch\\/resources\\/logo.png\",\"path\":\"logo.png\",\"size\":3675,\"bucket\":\"default\",\"w\":260,\"h\":55,\"sizes\":{\"thumb\":{\"w\":150,\"h\":31,\"path\":\"logo-thumb.png\",\"size\":7039,\"mime\":\"image\\/png\"}}},\"alt\":\"Your Logo Here\",\"_title\":\"Your Logo Here\"}','  Your Logo Here '),
 	(39,7,9,2,7,1001,'{\"_id\":\"7\",\"heading\":\"See our video tutorial\",\"_title\":\"See our video tutorial\",\"url\":\"http:\\/\\/docs.grabaperch.com\\/video\\/\",\"text\":{\"raw\":\"This box links to the video tutorial. We try to provide both text and videos, as different people like to learn in different ways.\",\"processed\":\"<p>This box links to the video tutorial. We try to provide both text and videos, as different people like to learn in different ways.<\\/p>\"}}',' See our video tutorial http://docs.grabaperch.com/video/ This box links to the video tutorial. We try to provide both text and videos, as different people like to learn in different ways. '),
 	(109,13,13,3,22,1000,'{\"_id\":\"13\",\"firstname\":\"Rachel\",\"_title\":\"Rachel Andrew\",\"lastname\":\"Andrew\",\"jobtitle\":\"Managing Director\",\"email\":\"info@edgeofmyseat.com\",\"bio\":{\"raw\":\"<p>This is another brief biography. It\'s very exciting, you have to admit.<\\/p>\",\"processed\":\"<p>This is another brief biography. It\'s very exciting, you have to admit.<\\/p>\"},\"image\":{\"_default\":\"\\/perch\\/resources\\/rachel.jpg\",\"path\":\"rachel.jpg\",\"size\":23652,\"bucket\":\"default\",\"w\":320,\"h\":320,\"sizes\":{\"thumb\":{\"w\":150,\"h\":150,\"path\":\"rachel-thumb.jpg\",\"size\":6552,\"mime\":\"image\\/jpeg\"},\"w80h80c1@2x\":{\"w\":80,\"h\":80,\"density\":\"2\",\"path\":\"rachel-w80h80@2x.jpg\",\"size\":7231,\"mime\":\"image\\/jpeg\"}}}}',' Rachel Andrew Managing Director info@edgeofmyseat.com This is another brief biography. It\'s very exciting, you have to admit.  '),
@@ -268,16 +269,16 @@ VALUES
 	(130,18,15,4,3,1002,'{\"_id\":\"18\",\"title\":\"Paris\",\"_title\":\"Paris\",\"slug\":\"paris\"}',' Paris paris '),
 	(140,20,17,6,1,1000,'{\"_id\":\"20\",\"title\":\"Window Cleaner\",\"_title\":\"Window Cleaner\",\"description\":{\"raw\":\"<p>You\'ll be required to clean the windows of our extensive Paris office, which is entirely glazed. Working hours are 8am to 8pm with a 20 minute break for lunch.<\\/p><p>The views are spectacular! (Or they will be, once you\'ve cleaned the windows.)<\\/p>\",\"processed\":\"<p>You\'ll be required to clean the windows of our extensive Paris office, which is entirely glazed. Working hours are 8am to 8pm with a 20 minute break for lunch.<\\/p><p>The views are spectacular! (Or they will be, once you\'ve cleaned the windows.)<\\/p>\"},\"requirements\":{\"raw\":\"<p><ul><li>A ladder<\\/li><li>A squeegee<\\/li><li>Mustn\'t be afraid of heights<\\/li><\\/ul><\\/p>\",\"processed\":\"<p><ul><li>A ladder<\\/li><li>A squeegee<\\/li><li>Mustn\'t be afraid of heights<\\/li><\\/ul><\\/p>\"},\"office\":\"Paris\",\"salary\":\"2,000\",\"deadline\":\"2014-06-24\",\"howtoapply\":{\"raw\":\"<p>Hand deliver your CV to the 18th floor of our Paris office. We\'ve left the window open, so just pop it through.<\\/p>\",\"processed\":\"<p>Hand deliver your CV to the 18th floor of our Paris office. We\'ve left the window open, so just pop it through.<\\/p>\"}}',' Window Cleaner You\'ll be required to clean the windows of our extensive Paris office, which is entirely glazed. Working hours are 8am to 8pm with a 20 minute break for lunch.The views are spectacular! (Or they will be, once you\'ve cleaned the windows.) A ladderA squeegeeMustn\'t be afraid of heights Paris 2,000 Tuesday 24 June 2014 Hand deliver your CV to the 18th floor of our Paris office. We\'ve left the window open, so just pop it through. '),
 	(138,19,16,5,7,1000,'{\"_id\":\"19\",\"title\":\"Content Editor\",\"_title\":\"Content Editor\",\"description\":{\"raw\":\"<p>You\'ll be required to edit content on a number of websites. If you\'re the sort of person who likes websites, loves content and wishes that there was some way that they could be combined into the perfect job for you, then this may be the perfect job for you.<\\/p><p>You\'ll be based in our London office, which is close to the Thames. It\'s open plan and a bit drab, but don\'t let that put you off.<\\/p>\",\"processed\":\"<p>You\'ll be required to edit content on a number of websites. If you\'re the sort of person who likes websites, loves content and wishes that there was some way that they could be combined into the perfect job for you, then this may be the perfect job for you.<\\/p><p>You\'ll be based in our London office, which is close to the Thames. It\'s open plan and a bit drab, but don\'t let that put you off.<\\/p>\"},\"requirements\":{\"raw\":\"<p><ul><li>12 months experience with websites<\\/li><li>Knowledge of website content<\\/li><li>A team player <i>(you don\'t have to play in any teams)<\\/i><\\/li><\\/ul><\\/p>\",\"processed\":\"<p><ul><li>12 months experience with websites<\\/li><li>Knowledge of website content<\\/li><li>A team player <i>(you don\'t have to play in any teams)<\\/i><\\/li><\\/ul><\\/p>\"},\"office\":\"London\",\"salary\":\"6,000\",\"deadline\":\"2014-11-24\",\"howtoapply\":{\"raw\":\"<p>Email a CV and covering letter to <a href=\\\"mailto:jobs@grabaperch.com\\\">jobs@grabaperch.com<\\/a>.&nbsp;<\\/p><p><b>Do not call in person.<\\/b><\\/p>\",\"processed\":\"<p>Email a CV and covering letter to <a href=\\\"mailto:jobs@grabaperch.com\\\">jobs@grabaperch.com<\\/a>.&nbsp;<\\/p><p><b>Do not call in person.<\\/b><\\/p>\"}}',' Content Editor You\'ll be required to edit content on a number of websites. If you\'re the sort of person who likes websites, loves content and wishes that there was some way that they could be combined into the perfect job for you, then this may be the perfect job for you.You\'ll be based in our London office, which is close to the Thames. It\'s open plan and a bit drab, but don\'t let that put you off. 12 months experience with websitesKnowledge of website contentA team player (you don\'t have to play in any teams) London 6,000 Monday 24 November 2014 Email a CV and covering letter to jobs@grabaperch.com.&nbsp;Do not call in person. ');
-
 /*!40000 ALTER TABLE `perch2_content_items` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-# Dump of table perch2_content_regions
-# ------------------------------------------------------------
+--
+-- Table structure for table `perch2_content_regions`
+--
 
 DROP TABLE IF EXISTS `perch2_content_regions`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `perch2_content_regions` (
   `regionID` int(10) NOT NULL AUTO_INCREMENT,
   `pageID` int(10) unsigned NOT NULL,
@@ -293,15 +294,19 @@ CREATE TABLE `perch2_content_regions` (
   `regionRev` int(10) unsigned NOT NULL DEFAULT '0',
   `regionLatestRev` int(10) unsigned NOT NULL DEFAULT '0',
   `regionEditRoles` varchar(255) NOT NULL DEFAULT '*',
-  PRIMARY KEY (`regionID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`regionID`),
+  KEY `idx_key` (`regionKey`) USING BTREE,
+  KEY `idx_path` (`regionPage`) USING BTREE
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `perch2_content_regions`
+--
 
 LOCK TABLES `perch2_content_regions` WRITE;
 /*!40000 ALTER TABLE `perch2_content_regions` DISABLE KEYS */;
-
-INSERT INTO `perch2_content_regions` (`regionID`, `pageID`, `regionKey`, `regionPage`, `regionHTML`, `regionNew`, `regionOrder`, `regionTemplate`, `regionMultiple`, `regionOptions`, `regionSearchable`, `regionRev`, `regionLatestRev`, `regionEditRoles`)
-VALUES
-	(3,2,'Site title','*','Demo website',0,0,'text.html',0,'{\"edit_mode\":\"listdetail\",\"searchURL\":\"\",\"title_delimit\":\"\",\"adminOnly\":0,\"addToTop\":0,\"limit\":false}',0,2,2,'*'),
+INSERT INTO `perch2_content_regions` VALUES (3,2,'Site title','*','Demo website',0,0,'text.html',0,'{\"edit_mode\":\"listdetail\",\"searchURL\":\"\",\"title_delimit\":\"\",\"adminOnly\":0,\"addToTop\":0,\"limit\":false}',0,3,3,'*'),
 	(4,2,'Company name','*','Perch CMS',0,1,'text.html',0,'{\"edit_mode\":\"listdetail\",\"searchURL\":\"\",\"title_delimit\":\"\",\"adminOnly\":0,\"addToTop\":0,\"limit\":false}',0,2,2,'*'),
 	(5,2,'Welcome message','/index.php','<h1>Welcome to your Perch demo site!</h1>\n<p>You can start off by editing this text. <a href=\"/perch\">Log in</a> to the Perch control panel, and you&#8217;ll find this as <em>Welcome message</em> on the <em>Home page</em>.</p>\n\n<p>For this text, we&#8217;ve chosen to edit it using the Textile formatting language. It&#8217;s text-based and easier to write than <span class=\"caps\">HTML</span>, but still enables you to do text formatting, links, headings and so on. It&#8217;s good at focussing the user on the <em>content</em> and not on the <em>presentation</em>.</p>\n\n<p>Perch also supports Markdown, and has add-ons for common <span class=\"caps\">WYSIWYG</span> editors such as:</p>\n\n	<ul>\n		<li><span class=\"caps\">CKE</span>ditor</li>\n		<li>Redactor</li>\n		<li>TinyMCE</li>\n		<li>Ace</li>\n	</ul>\n\n<p>We&#8217;ll look at some of those later. First, how about some images.</p>',0,3,'intro_block.html',0,'{\"edit_mode\":\"singlepage\"}',1,4,4,'*'),
 	(6,2,'Feature image','/index.php','<figure>\n	<img alt=\"Streamers everywhere!\" src=\"/perch/resources/img1896-w680@2x.jpg\" width=\"680\" />\n	<figcaption>\n		<h4>Streamers everywhere!</h4>\n		<p>This is an image displayed using the HTML5 <code>figure</code> element. It&#8217;s been set at a width of 680px so any image uploades will be scaled to match. It&#8217;s also set to double pixel density, which makes it perfect for high-<span class=\"caps\">DPI</span> screens. Content managed, retina-ready images &#8211; if you want them.</p>\n	</figcaption>\n</figure>\n',0,4,'figure.html',1,'{\"edit_mode\":\"singlepage\"}',1,7,7,'*'),
@@ -309,34 +314,36 @@ VALUES
 	(9,2,'Feature boxes','/index.php','\n<div class=\"modules\">\n\n	<div class=\"module\">\n		<h3>\n			\n			This is a feature!\n			\n		</h3>\n		<p>I can add lots of these boxes, optionally with a link on the heading. It uses Textile, so I can do <strong>bold</strong> and <em>italic</em> and so on.</p>\n	</div>\n\n\n	<div class=\"module\">\n		<h3>\n			<a href=\"http://docs.grabaperch.com/video/\">\n			See our video tutorial\n			</a>\n		</h3>\n		<p>This box links to the video tutorial. We try to provide both text and videos, as different people like to learn in different ways.</p>\n	</div>\n\n\n	<div class=\"module\">\n		<h3>\n			\n			Add some boxes\n			\n		</h3>\n		<p>Have some fun! You can add as many of these as you want. And they&#8217;re totally free! Aren&#8217;t we generous?</p>\n	</div>\n\n</div>\n\n',0,5,'modules.html',1,'{\"edit_mode\":\"singlepage\",\"sortOrder\":\"ASC\",\"sortField\":\"\",\"limit\":\"\",\"searchURL\":\"\",\"addToTop\":\"\",\"column_ids\":\"heading, url\",\"title_delimit\":\"\",\"adminOnly\":0}',1,7,7,'*'),
 	(11,2,'Social links','*','\n<ul class=\"social-links\">\n	<li class=\"twitter\"><a href=\"http://twitter.com/grabaperch\" rel=\"me\">Twitter</a></li>\n	<li class=\"facebook\"><a href=\"http://facebook.com/grabaperch\" rel=\"me\">Facebook</a></li>\n	\n	\n</ul>\n',0,6,'social_links.html',0,'{\"edit_mode\":\"listdetail\",\"searchURL\":\"\",\"title_delimit\":\"\",\"adminOnly\":0,\"addToTop\":0,\"limit\":false}',0,12,12,'*'),
 	(12,3,'Intro','/about/index.php','<h1>Let\'s talk about templates</h1>\n<p>Perch is really big on what we call <em>structured content</em>. This is what makes Perch different from other small <span class=\"caps\">CMS</span> options. We recognise that not all content is the shape of a blog post &#8212; most things have finer detail than that.</p>\n\n<p>Take the example of a list of employee profiles. Each person will have a first and last name, a photo, a job title, an email address and maybe a short biography. In Perch, we like to capture each of those bits of information separately, for a few reasons:</p>\n\n	<ol>\n		<li>It helps the user who has to enter the content. They can fill out fields without worrying about how it should look &#8211; they just put the right data in the right boxes. Because it&#8217;s easy, it avoids mistakes.</li>\n		<li>If you want to reuse that content in a different form somewhere else on the site, you can.</li>\n		<li>If you change the design of your site, you can update the markup and content separately &#8211; you don&#8217;t have content and <span class=\"caps\">HTML</span> intermingled.</li>\n	</ol>\n\n<p>We do this by creating a template. A template is just an <span class=\"caps\">HTML</span> snippet, with Perch tags dropped in as placeholders for the content. When you go to edit the region, Perch creates form fields for each of the placeholders.</p>\n\n<p>You can <a href=\"https://github.com/PerchCMS/perchdemo-default/blob/master/public_html/perch/templates/content/staff_profiles.html\">see what the template looks like</a> on Github.</p>',0,3,'intro_block.html',0,'{\"edit_mode\":\"singlepage\"}',1,9,9,'*'),
-	(13,3,'Staff profiles','/about/index.php','\n<h2>Our People</h2>\n<div class=\"modules\">\n\n\n	<div class=\"module staff-profile\">\n		\n			<img src=\"/perch/resources/rachel-w80h80@2x.jpg\" width=\"80\" height=\"80\" class=\"photo\" />\n		\n		<h3>\n			Rachel\n			Andrew\n		</h3>\n		<p class=\"job-title\">Managing Director</p>\n		<p class=\"email\"><a href=\"mailto:info@edgeofmyseat.com\">Email Rachel</a></p>\n		<div class=\"bio\"><p>This is another brief biography. It\'s very exciting, you have to admit.</p></div>\n	</div>\n\n\n\n\n	<div class=\"module staff-profile\">\n		\n			<img src=\"/perch/resources/drewm-w80h80@2x.jpg\" width=\"80\" height=\"80\" class=\"photo\" />\n		\n		<h3>\n			Drew\n			McLellan\n		</h3>\n		<p class=\"job-title\">Director</p>\n		<p class=\"email\"><a href=\"mailto:hello@grabaperch.com\">Email Drew</a></p>\n		<div class=\"bio\"><p>This is a brief bio, using the Redactor editor. It has <b>bold</b>&nbsp;and <i>italic </i>and so on.</p></div>\n	</div>\n\n\n\n\n	<div class=\"module staff-profile\">\n		\n			<img class=\"photo\" src=\"http://www.gravatar.com/avatar/12a6d4d069cd56cfddaa391c24eb7042?s=160&amp;d=mm\" width=\"80\" height=\"80\" />\n		\n		<h3>\n			{firstname}\n			{lastname}\n		</h3>\n		<p class=\"job-title\">Intern</p>\n		<p class=\"email\"><a href=\"mailto:{email}\">Email {firstname}</a></p>\n		<div class=\"bio\"><p>That\'s you! Try adding some more, it\'s fun! <i>(It may not actually be fun.)</i></p></div>\n	</div>\n\n\n</div>\n\n',0,4,'staff_profiles.html',1,'{\"edit_mode\":\"listdetail\",\"sortOrder\":\"ASC\",\"sortField\":\"\",\"limit\":\"\",\"searchURL\":\"\",\"addToTop\":\"\",\"column_ids\":\"image[tag], firstname, lastname, jobtitle, email\",\"title_delimit\":\" \",\"adminOnly\":0}',1,22,22,'*'),
+	(13,3,'Staff profiles','/about/index.php','\n<h2>Our People</h2>\n<div class=\"modules\">\n\n\n<div class=\"module staff-profile\">\n	\n		<img src=\"/perch/resources/rachel-w80h80@2x.jpg\" width=\"80\" height=\"80\" class=\"photo\" />\n	\n	<h3>\n		Rachel\n		Andrew\n	</h3>\n	<p class=\"job-title\">\n		Managing Director\n	</p>\n	<p class=\"email\">\n		<a href=\"mailto:info@edgeofmyseat.com\">Email Rachel</a>\n	</p>\n	<div class=\"bio\">\n		<p>This is another brief biography. It\'s very exciting, you have to admit.</p>\n	</div>\n</div>\n\n\n\n\n<div class=\"module staff-profile\">\n	\n		<img src=\"/perch/resources/drewm-w80h80@2x.jpg\" width=\"80\" height=\"80\" class=\"photo\" />\n	\n	<h3>\n		Drew\n		McLellan\n	</h3>\n	<p class=\"job-title\">\n		Director\n	</p>\n	<p class=\"email\">\n		<a href=\"mailto:hello@grabaperch.com\">Email Drew</a>\n	</p>\n	<div class=\"bio\">\n		<p>This is a brief bio, using the Redactor editor. It has <b>bold</b>&nbsp;and <i>italic </i>and so on.</p>\n	</div>\n</div>\n\n\n\n\n<div class=\"module staff-profile\">\n	\n		<img class=\"photo\" src=\"http://www.gravatar.com/avatar/12a6d4d069cd56cfddaa391c24eb7042?s=160&amp;d=mm\" width=\"80\" height=\"80\" />\n	\n	<h3>\n		{firstname}\n		{lastname}\n	</h3>\n	<p class=\"job-title\">\n		Intern\n	</p>\n	<p class=\"email\">\n		<a href=\"mailto:{email}\">Email {firstname}</a>\n	</p>\n	<div class=\"bio\">\n		<p>That\'s you! Try adding some more, it\'s fun! <i>(It may not actually be fun.)</i></p>\n	</div>\n</div>\n\n\n</div>\n\n',0,4,'staff_profiles.html',1,'{\"edit_mode\":\"listdetail\",\"sortOrder\":\"ASC\",\"sortField\":\"\",\"limit\":\"\",\"searchURL\":\"\",\"addToTop\":\"\",\"column_ids\":\"image[tag], firstname, lastname, jobtitle, email\",\"title_delimit\":\" \",\"adminOnly\":0}',1,22,22,'*'),
 	(14,4,'Intro','/careers/index.php','<h1>Work with us</h1>\n<p>Although it can be used in lots of different ways, Perch is at its best when critical decisions about site structure and information architecture are made by the web designer, and then set up for the client to work with. Adding new pages to a site is great, but it&#8217;s usually best done within a framework and not haphazardly.</p>\n\n<p>This section has been set up with this approach in mind. Add a new subpage to the Careers page (hover over Careers in the page listing, and click <em>New subpage</em>) to add a new job listing page. The pages will then be summarised below.</p>',0,3,'intro_block.html',0,'{\"edit_mode\":\"singlepage\"}',1,8,8,'*'),
 	(15,4,'Offices','/careers/index.php','London\nlondonNew York\nnew-yorkParis\nparis',0,4,'office.html',1,'{\"edit_mode\":\"singlepage\"}',1,3,3,'*'),
 	(16,5,'Job','/careers/content-editor.php','<div class=\"wrapper cols2-nav-right\">\n	<nav class=\"sidebar\">\n		<h3>How to apply</h3>\n		<p>Email a CV and covering letter to <a href=\"mailto:jobs@grabaperch.com\">jobs@grabaperch.com</a>.&nbsp;</p><p><b>Do not call in person.</b></p>\n	</nav>\n	<div class=\"primary-content\">		\n 		<h1>Content Editor</h1>\n\n 		<p>You\'ll be required to edit content on a number of websites. If you\'re the sort of person who likes websites, loves content and wishes that there was some way that they could be combined into the perfect job for you, then this may be the perfect job for you.</p><p>You\'ll be based in our London office, which is close to the Thames. It\'s open plan and a bit drab, but don\'t let that put you off.</p>\n		\n		\n	 		<h2>Requirements</h2>\n	 		<p><ul><li>12 months experience with websites</li><li>Knowledge of website content</li><li>A team player <i>(you don\'t have to play in any teams)</i></li></ul></p>\n	 	\n\n	 	<h2>Details</h2>\n\n		<ul>\n			<li><strong>Office:</strong> London</li>\n			<li><strong>Salary:</strong> &pound;6,000 per annum</li>\n			<li><strong>Application closing date:</strong> 24th November 2014</li>\n		</ul>\n	</div>\n</div>',0,3,'job.html',0,'[]',1,7,7,'*'),
 	(17,6,'Job','/careers/window-cleaner.php','<div class=\"wrapper cols2-nav-right\">\n	<nav class=\"sidebar\">\n		<h3>How to apply</h3>\n		<p>Hand deliver your CV to the 18th floor of our Paris office. We\'ve left the window open, so just pop it through.</p>\n	</nav>\n	<div class=\"primary-content\">		\n 		<h1>Window Cleaner</h1>\n\n 		<p>You\'ll be required to clean the windows of our extensive Paris office, which is entirely glazed. Working hours are 8am to 8pm with a 20 minute break for lunch.</p><p>The views are spectacular! (Or they will be, once you\'ve cleaned the windows.)</p>\n		\n		\n	 		<h2>Requirements</h2>\n	 		<p><ul><li>A ladder</li><li>A squeegee</li><li>Mustn\'t be afraid of heights</li></ul></p>\n	 	\n\n	 	<h2>Details</h2>\n\n		<ul>\n			<li><strong>Office:</strong> Paris</li>\n			<li><strong>Salary:</strong> &pound;2,000 per annum</li>\n			<li><strong>Application closing date:</strong> 24th June 2014</li>\n		</ul>\n	</div>\n</div>',0,3,'job.html',0,'[]',1,1,1,'*'),
 	(18,7,'Job','/careers/doorman.php','<div class=\"wrapper cols2-nav-right\">\n	<nav class=\"sidebar\">\n		<h3>How to apply</h3>\n		<p>Apply in person by delivering your CV to our current doorman. It\'ll cheer him up no end!</p>\n	</nav>\n	<div class=\"primary-content\">		\n 		<h1>Doorman</h1>\n\n 		<p>You\'ll be required to greet and welcome guests as they arrive at our London office.&nbsp;</p><p>There\'s no hiding it, this job requires a lot of standing around.</p>\n		\n		\n	 		<h2>Requirements</h2>\n	 		<p><ul><li>2-3 experience with doors</li><li>Ability to stand for long periods</li><li>Look good in a hat</li></ul></p>\n	 	\n\n	 	<h2>Details</h2>\n\n		<ul>\n			<li><strong>Office:</strong> London</li>\n			<li><strong>Salary:</strong> &pound;3,000 per annum</li>\n			<li><strong>Application closing date:</strong> 26th October 2015</li>\n		</ul>\n	</div>\n</div>',0,3,'job.html',0,'[]',1,1,1,'*');
-
 /*!40000 ALTER TABLE `perch2_content_regions` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-# Dump of table perch2_content_resources
-# ------------------------------------------------------------
+--
+-- Table structure for table `perch2_content_resources`
+--
 
 DROP TABLE IF EXISTS `perch2_content_resources`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `perch2_content_resources` (
   `itemRowID` int(10) unsigned NOT NULL,
   `resourceID` int(10) unsigned NOT NULL,
   PRIMARY KEY (`itemRowID`,`resourceID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `perch2_content_resources`
+--
 
 LOCK TABLES `perch2_content_resources` WRITE;
 /*!40000 ALTER TABLE `perch2_content_resources` DISABLE KEYS */;
-
-INSERT INTO `perch2_content_resources` (`itemRowID`, `resourceID`)
-VALUES
-	(20,1),
+INSERT INTO `perch2_content_resources` VALUES (20,1),
 	(20,2),
 	(20,4),
 	(45,7),
@@ -347,30 +354,40 @@ VALUES
 	(110,9),
 	(110,10),
 	(110,11);
-
 /*!40000 ALTER TABLE `perch2_content_resources` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-# Dump of table perch2_navigation
-# ------------------------------------------------------------
+--
+-- Table structure for table `perch2_navigation`
+--
 
 DROP TABLE IF EXISTS `perch2_navigation`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `perch2_navigation` (
   `groupID` int(10) NOT NULL AUTO_INCREMENT,
   `groupTitle` varchar(255) NOT NULL DEFAULT '',
   `groupSlug` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`groupID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `perch2_navigation`
+--
 
+LOCK TABLES `perch2_navigation` WRITE;
+/*!40000 ALTER TABLE `perch2_navigation` DISABLE KEYS */;
+/*!40000 ALTER TABLE `perch2_navigation` ENABLE KEYS */;
+UNLOCK TABLES;
 
-# Dump of table perch2_navigation_pages
-# ------------------------------------------------------------
+--
+-- Table structure for table `perch2_navigation_pages`
+--
 
 DROP TABLE IF EXISTS `perch2_navigation_pages`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `perch2_navigation_pages` (
   `navpageID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `pageID` int(10) unsigned NOT NULL DEFAULT '0',
@@ -383,14 +400,24 @@ CREATE TABLE `perch2_navigation_pages` (
   KEY `idx_group` (`groupID`),
   KEY `idx_page_group` (`pageID`,`groupID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `perch2_navigation_pages`
+--
 
+LOCK TABLES `perch2_navigation_pages` WRITE;
+/*!40000 ALTER TABLE `perch2_navigation_pages` DISABLE KEYS */;
+/*!40000 ALTER TABLE `perch2_navigation_pages` ENABLE KEYS */;
+UNLOCK TABLES;
 
-# Dump of table perch2_page_templates
-# ------------------------------------------------------------
+--
+-- Table structure for table `perch2_page_templates`
+--
 
 DROP TABLE IF EXISTS `perch2_page_templates`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `perch2_page_templates` (
   `templateID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `templateTitle` varchar(255) NOT NULL DEFAULT '',
@@ -399,25 +426,27 @@ CREATE TABLE `perch2_page_templates` (
   `templateReference` tinyint(1) unsigned NOT NULL DEFAULT '1',
   `templateNavGroups` varchar(255) DEFAULT '',
   PRIMARY KEY (`templateID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `perch2_page_templates`
+--
 
 LOCK TABLES `perch2_page_templates` WRITE;
 /*!40000 ALTER TABLE `perch2_page_templates` DISABLE KEYS */;
-
-INSERT INTO `perch2_page_templates` (`templateID`, `templateTitle`, `templatePath`, `optionsPageID`, `templateReference`, `templateNavGroups`)
-VALUES
-	(1,'Default','default.php',0,1,''),
+INSERT INTO `perch2_page_templates` VALUES (1,'Default','default.php',0,1,''),
 	(2,'Job Listing','job_listing.php',0,1,'');
-
 /*!40000 ALTER TABLE `perch2_page_templates` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-# Dump of table perch2_pages
-# ------------------------------------------------------------
+--
+-- Table structure for table `perch2_pages`
+--
 
 DROP TABLE IF EXISTS `perch2_pages`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `perch2_pages` (
   `pageID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `pageParentID` int(10) unsigned NOT NULL DEFAULT '0',
@@ -434,31 +463,37 @@ CREATE TABLE `perch2_pages` (
   `pageHidden` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `pageNavOnly` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `pageAccessTags` varchar(255) NOT NULL DEFAULT '',
+  `pageCreatorID` int(10) unsigned NOT NULL DEFAULT '0',
+  `pageModified` datetime NOT NULL DEFAULT '2014-01-01 00:00:00',
+  `pageAttributes` text NOT NULL,
+  `pageAttributeTemplate` varchar(255) NOT NULL DEFAULT 'default.html',
   PRIMARY KEY (`pageID`),
   KEY `idx_parent` (`pageParentID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `perch2_pages`
+--
 
 LOCK TABLES `perch2_pages` WRITE;
 /*!40000 ALTER TABLE `perch2_pages` DISABLE KEYS */;
-
-INSERT INTO `perch2_pages` (`pageID`, `pageParentID`, `pagePath`, `pageTitle`, `pageNavText`, `pageNew`, `pageOrder`, `pageDepth`, `pageSortPath`, `pageTreePosition`, `pageSubpageRoles`, `pageSubpagePath`, `pageHidden`, `pageNavOnly`, `pageAccessTags`)
-VALUES
-	(2,0,'/index.php','Home page','Home page',0,1,1,'','000-001','','',0,0,''),
-	(3,0,'/about/index.php','About','About',0,2,1,'//about','000-002','','/about',0,0,''),
-	(4,0,'/careers/index.php','Careers','Careers',0,3,1,'/careers','000-003','','/careers',0,0,''),
-	(5,4,'/careers/content-editor.php','Content Editor','Content Editor',0,5,2,'/careers/content-editor','000-003-005','','',0,0,''),
-	(6,4,'/careers/window-cleaner.php','Window Cleaner','Window Cleaner',0,6,2,'/careers/window-cleaner','000-003-006','','',0,0,''),
-	(7,4,'/careers/doorman.php','Doorman','Doorman',0,4,2,'/careers/doorman','000-003-004','*','/careers',0,0,'');
-
+INSERT INTO `perch2_pages` VALUES (2,0,'/index.php','Home page','Home page',0,1,1,'','000-001','','',0,0,'',0,'2014-02-11 10:38:03','{\"description\":{\"raw\":\"\",\"processed\":\"\"},\"keywords\":{\"raw\":\"\",\"processed\":\"\"},\"nofollow\":\"nofollow\"}','default.html'),
+	(3,0,'/about/index.php','About','About',0,2,1,'//about','000-002','','/about',0,0,'',0,'2014-01-01 00:00:00','','default.html'),
+	(4,0,'/careers/index.php','Careers','Careers',0,3,1,'/careers','000-003','','/careers',0,0,'',0,'2014-01-01 00:00:00','','default.html'),
+	(5,4,'/careers/content-editor.php','Content Editor','Content Editor',0,5,2,'/careers/content-editor','000-003-005','','',0,0,'',0,'2014-01-01 00:00:00','','default.html'),
+	(6,4,'/careers/window-cleaner.php','Window Cleaner','Window Cleaner',0,6,2,'/careers/window-cleaner','000-003-006','','',0,0,'',0,'2014-01-01 00:00:00','','default.html'),
+	(7,4,'/careers/doorman.php','Doorman','Doorman',0,4,2,'/careers/doorman','000-003-004','*','/careers',0,0,'',0,'2014-01-01 00:00:00','','default.html');
 /*!40000 ALTER TABLE `perch2_pages` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-# Dump of table perch2_resources
-# ------------------------------------------------------------
+--
+-- Table structure for table `perch2_resources`
+--
 
 DROP TABLE IF EXISTS `perch2_resources`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `perch2_resources` (
   `resourceID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `resourceApp` char(32) NOT NULL DEFAULT 'content',
@@ -472,14 +507,16 @@ CREATE TABLE `perch2_resources` (
   KEY `idx_app` (`resourceApp`),
   KEY `idx_key` (`resourceKey`),
   KEY `idx_type` (`resourceType`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `perch2_resources`
+--
 
 LOCK TABLES `perch2_resources` WRITE;
 /*!40000 ALTER TABLE `perch2_resources` DISABLE KEYS */;
-
-INSERT INTO `perch2_resources` (`resourceID`, `resourceApp`, `resourceBucket`, `resourceFile`, `resourceKey`, `resourceParentID`, `resourceType`)
-VALUES
-	(1,'content','default','img1896.jpg','orig',0,'jpg'),
+INSERT INTO `perch2_resources` VALUES (1,'content','default','img1896.jpg','orig',0,'jpg'),
 	(2,'content','default','img1896-thumb.jpg','thumb',1,'jpg'),
 	(10,'content','default','drewm-thumb.jpg','thumb',9,'jpg'),
 	(4,'content','default','img1896-w680@2x.jpg','',1,'jpg'),
@@ -490,29 +527,60 @@ VALUES
 	(12,'content','default','rachel.jpg','orig',0,'jpg'),
 	(13,'content','default','rachel-thumb.jpg','thumb',12,'jpg'),
 	(14,'content','default','rachel-w80h80@2x.jpg','',12,'jpg');
-
 /*!40000 ALTER TABLE `perch2_resources` ENABLE KEYS */;
 UNLOCK TABLES;
 
+--
+-- Table structure for table `perch2_scheduled_tasks`
+--
 
-# Dump of table perch2_settings
-# ------------------------------------------------------------
+DROP TABLE IF EXISTS `perch2_scheduled_tasks`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `perch2_scheduled_tasks` (
+  `taskID` int(10) NOT NULL AUTO_INCREMENT,
+  `taskStartTime` datetime NOT NULL,
+  `taskEndTime` datetime DEFAULT NULL,
+  `taskApp` varchar(64) NOT NULL DEFAULT '',
+  `taskKey` varchar(64) DEFAULT NULL,
+  `taskResult` enum('OK','WARNING','FAILED') NOT NULL DEFAULT 'FAILED',
+  `taskMessage` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`taskID`),
+  KEY `idx_app` (`taskApp`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `perch2_scheduled_tasks`
+--
+
+LOCK TABLES `perch2_scheduled_tasks` WRITE;
+/*!40000 ALTER TABLE `perch2_scheduled_tasks` DISABLE KEYS */;
+/*!40000 ALTER TABLE `perch2_scheduled_tasks` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `perch2_settings`
+--
 
 DROP TABLE IF EXISTS `perch2_settings`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `perch2_settings` (
   `settingID` varchar(60) NOT NULL DEFAULT '',
   `userID` int(10) unsigned NOT NULL DEFAULT '0',
   `settingValue` text NOT NULL,
   PRIMARY KEY (`settingID`,`userID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `perch2_settings`
+--
 
 LOCK TABLES `perch2_settings` WRITE;
 /*!40000 ALTER TABLE `perch2_settings` DISABLE KEYS */;
-
-INSERT INTO `perch2_settings` (`settingID`, `userID`, `settingValue`)
-VALUES
-	('headerColour',0,'#ffffff'),
+INSERT INTO `perch2_settings` VALUES ('headerColour',0,'#ffffff'),
 	('content_singlePageEdit',0,'1'),
 	('helpURL',0,''),
 	('siteURL',0,'/'),
@@ -520,31 +588,41 @@ VALUES
 	('content_collapseList',0,'1'),
 	('lang',0,'en-gb'),
 	('update_2.2.9',0,'done'),
-	('latest_version',0,'2.0.8');
-
+	('latest_version',0,'2.3.2'),
+	('update_2.3.1',0,'done'),
+	('update_2.4.4',0,'done'),
+	('headerScheme',0,'light'),
+	('content_frontend_edit',0,'0'),
+	('dashboard',0,'0'),
+	('content_hideNonEditableRegions',0,'0'),
+	('on_sale_version',0,'2.4.4');
 /*!40000 ALTER TABLE `perch2_settings` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-# Dump of table perch2_user_privileges
-# ------------------------------------------------------------
+--
+-- Table structure for table `perch2_user_privileges`
+--
 
 DROP TABLE IF EXISTS `perch2_user_privileges`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `perch2_user_privileges` (
   `privID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `privKey` varchar(255) NOT NULL DEFAULT '',
   `privTitle` varchar(255) NOT NULL DEFAULT '',
   `privOrder` int(10) unsigned NOT NULL DEFAULT '99',
-  PRIMARY KEY (`privID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`privID`),
+  UNIQUE KEY `idx_key` (`privKey`)
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `perch2_user_privileges`
+--
 
 LOCK TABLES `perch2_user_privileges` WRITE;
 /*!40000 ALTER TABLE `perch2_user_privileges` DISABLE KEYS */;
-
-INSERT INTO `perch2_user_privileges` (`privID`, `privKey`, `privTitle`, `privOrder`)
-VALUES
-	(1,'perch.login','Log in',1),
+INSERT INTO `perch2_user_privileges` VALUES (1,'perch.login','Log in',1),
 	(2,'perch.settings','Change settings',2),
 	(3,'perch.users.manage','Manage users',3),
 	(4,'perch.updatenotices','View update notices',4),
@@ -558,29 +636,36 @@ VALUES
 	(12,'content.templates.delete','Delete master pages',6),
 	(13,'content.navgroups.configure','Configure navigation groups',7),
 	(14,'content.navgroups.create','Create navigation groups',8),
-	(15,'content.navgroups.delete','Delete navigation groups',9);
-
+	(15,'content.navgroups.delete','Delete navigation groups',9),
+	(16,'content.pages.create.toplevel','Add new top-level pages',3),
+	(17,'content.pages.delete.own','Delete pages they created themselves',4),
+	(18,'content.templates.configure','Configure master pages',6),
+	(19,'content.pages.republish','Republish pages',12),
+	(20,'content.pages.attributes','Edit page titles and attributes',6);
 /*!40000 ALTER TABLE `perch2_user_privileges` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-# Dump of table perch2_user_role_privileges
-# ------------------------------------------------------------
+--
+-- Table structure for table `perch2_user_role_privileges`
+--
 
 DROP TABLE IF EXISTS `perch2_user_role_privileges`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `perch2_user_role_privileges` (
   `roleID` int(10) unsigned NOT NULL,
   `privID` int(10) unsigned NOT NULL,
   PRIMARY KEY (`roleID`,`privID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `perch2_user_role_privileges`
+--
 
 LOCK TABLES `perch2_user_role_privileges` WRITE;
 /*!40000 ALTER TABLE `perch2_user_role_privileges` DISABLE KEYS */;
-
-INSERT INTO `perch2_user_role_privileges` (`roleID`, `privID`)
-VALUES
-	(1,1),
+INSERT INTO `perch2_user_role_privileges` VALUES (1,1),
 	(1,7),
 	(1,8),
 	(2,1),
@@ -595,41 +680,43 @@ VALUES
 	(2,10),
 	(2,11),
 	(2,12);
-
 /*!40000 ALTER TABLE `perch2_user_role_privileges` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-# Dump of table perch2_user_roles
-# ------------------------------------------------------------
+--
+-- Table structure for table `perch2_user_roles`
+--
 
 DROP TABLE IF EXISTS `perch2_user_roles`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `perch2_user_roles` (
   `roleID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `roleTitle` varchar(255) NOT NULL DEFAULT '',
   `roleSlug` varchar(255) NOT NULL DEFAULT '',
   `roleMasterAdmin` tinyint(1) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`roleID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `perch2_user_roles`
+--
 
 LOCK TABLES `perch2_user_roles` WRITE;
 /*!40000 ALTER TABLE `perch2_user_roles` DISABLE KEYS */;
-
-INSERT INTO `perch2_user_roles` (`roleID`, `roleTitle`, `roleSlug`, `roleMasterAdmin`)
-VALUES
-	(1,'Editor','editor',0),
+INSERT INTO `perch2_user_roles` VALUES (1,'Editor','editor',0),
 	(2,'Admin','admin',1);
-
 /*!40000 ALTER TABLE `perch2_user_roles` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
-# Dump of table perch2_users
-# ------------------------------------------------------------
+--
+-- Table structure for table `perch2_users`
+--
 
 DROP TABLE IF EXISTS `perch2_users`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `perch2_users` (
   `userID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `userUsername` varchar(255) NOT NULL DEFAULT '',
@@ -646,23 +733,26 @@ CREATE TABLE `perch2_users` (
   `userMasterAdmin` tinyint(1) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`userID`),
   KEY `idx_enabled` (`userEnabled`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `perch2_users`
+--
 
 LOCK TABLES `perch2_users` WRITE;
 /*!40000 ALTER TABLE `perch2_users` DISABLE KEYS */;
-
-INSERT INTO `perch2_users` (`userID`, `userUsername`, `userPassword`, `userCreated`, `userUpdated`, `userLastLogin`, `userGivenName`, `userFamilyName`, `userEmail`, `userEnabled`, `userHash`, `roleID`, `userMasterAdmin`)
-VALUES
-	(1,'{username}','{password}','2013-06-23 12:14:42','2013-06-24 11:29:28','2013-06-23 12:15:37','{firstname}','{lastname}','{email}',1,'4ded7856461645c6c42ff3858df54b48',2,1);
-
+INSERT INTO `perch2_users` VALUES (1,'{username}','{password}','2013-06-23 12:14:42','2014-02-11 11:21:46','2014-02-11 10:29:33','{firstname}','{lastname}','{email}',1,'9bfe1966b9073f9bdb5656ac548b6a39',2,1);
 /*!40000 ALTER TABLE `perch2_users` ENABLE KEYS */;
 UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
-
-
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2014-02-12 14:29:38

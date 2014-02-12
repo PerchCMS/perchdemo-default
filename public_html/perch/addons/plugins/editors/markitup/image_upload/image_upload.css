@@ -92,7 +92,7 @@
 }
 
 #miu_image_upload.fail span.speak {
-	border-color: transparent transparent rgba(179, 64, 64, 0.7); transparent;
+	border-color: transparent transparent rgba(179, 64, 64, 0.7);
 }
 
 #miu_image_upload img.spinner {

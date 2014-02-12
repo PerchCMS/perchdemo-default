@@ -14,4 +14,5 @@
     define('PERCH_HTML5', true);
   
     define('PERCH_DONT_DELETE_FILES', true);
+    define('PERCH_SCHEDULE_SECRET', 'c21f969b');
 ?>
