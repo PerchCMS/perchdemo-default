@@ -1,3 +1,5 @@
+.DS_Store
+
 /public_html/perch/addons
 /public_html/perch/config/config.private.php
 /public_html/perch/core
