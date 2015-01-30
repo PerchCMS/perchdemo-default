@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.38, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.41, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: db_demo_default
 -- ------------------------------------------------------
--- Server version	5.5.38-0+wheezy1
+-- Server version	5.5.41-0+wheezy1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -29,7 +29,7 @@ CREATE TABLE `perch2_categories` (
   `catTitle` char(64) NOT NULL DEFAULT '',
   `catSlug` char(64) NOT NULL DEFAULT '',
   `catPath` char(255) NOT NULL DEFAULT '',
-  `catDisplayPath` char(255) NOT NULL,
+  `catDisplayPath` char(255) NOT NULL DEFAULT '',
   `catOrder` int(10) unsigned NOT NULL DEFAULT '0',
   `catTreePosition` char(255) NOT NULL DEFAULT '000',
   `catDynamicFields` text NOT NULL,
@@ -323,6 +323,9 @@ CREATE TABLE `perch2_pages` (
   `pageAttributes` text NOT NULL,
   `pageAttributeTemplate` varchar(255) NOT NULL DEFAULT 'default.html',
   `pageTemplate` char(255) NOT NULL DEFAULT '',
+  `templateID` int(10) unsigned NOT NULL DEFAULT '0',
+  `pageSubpageTemplates` varchar(255) NOT NULL DEFAULT '',
+  `pageCollections` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`pageID`),
   KEY `idx_parent` (`pageParentID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
@@ -334,7 +337,7 @@ CREATE TABLE `perch2_pages` (
 
 LOCK TABLES `perch2_pages` WRITE;
 /*!40000 ALTER TABLE `perch2_pages` DISABLE KEYS */;
-INSERT INTO `perch2_pages` VALUES (2,0,'/index.php','Home page','Home page',0,1,1,'','000-001','','',0,0,'',0,'2014-02-11 10:38:03','{\"description\":{\"raw\":\"\",\"processed\":\"\"},\"keywords\":{\"raw\":\"\",\"processed\":\"\"},\"nofollow\":\"nofollow\"}','default.html',''),(3,0,'/about/index.php','About','About',0,2,1,'//about','000-002','','/about',0,0,'',0,'2014-01-01 00:00:00','','default.html',''),(4,0,'/careers/index.php','Careers','Careers',0,3,1,'/careers','000-003','','/careers',0,0,'',0,'2014-01-01 00:00:00','','default.html',''),(5,4,'/careers/content-editor.php','Content Editor','Content Editor',0,5,2,'/careers/content-editor','000-003-005','','',0,0,'',0,'2014-01-01 00:00:00','','default.html',''),(6,4,'/careers/window-cleaner.php','Window Cleaner','Window Cleaner',0,6,2,'/careers/window-cleaner','000-003-006','','',0,0,'',0,'2014-01-01 00:00:00','','default.html',''),(7,4,'/careers/doorman.php','Doorman','Doorman',0,4,2,'/careers/doorman','000-003-004','*','/careers',0,0,'',0,'2014-01-01 00:00:00','','default.html','');
+INSERT INTO `perch2_pages` VALUES (2,0,'/index.php','Home page','Home page',0,1,1,'','000-001','','',0,0,'',0,'2014-02-11 10:38:03','{\"description\":{\"raw\":\"\",\"processed\":\"\"},\"keywords\":{\"raw\":\"\",\"processed\":\"\"},\"nofollow\":\"nofollow\"}','default.html','',0,'',''),(3,0,'/about/index.php','About','About',0,2,1,'//about','000-002','','/about',0,0,'',0,'2014-01-01 00:00:00','','default.html','',0,'',''),(4,0,'/careers/index.php','Careers','Careers',0,3,1,'/careers','000-003','','/careers',0,0,'',0,'2014-01-01 00:00:00','','default.html','',0,'',''),(5,4,'/careers/content-editor.php','Content Editor','Content Editor',0,5,2,'/careers/content-editor','000-003-005','','',0,0,'',0,'2014-01-01 00:00:00','','default.html','',0,'',''),(6,4,'/careers/window-cleaner.php','Window Cleaner','Window Cleaner',0,6,2,'/careers/window-cleaner','000-003-006','','',0,0,'',0,'2014-01-01 00:00:00','','default.html','',0,'',''),(7,4,'/careers/doorman.php','Doorman','Doorman',0,4,2,'/careers/doorman','000-003-004','*','/careers',0,0,'',0,'2014-01-01 00:00:00','','default.html','',0,'','');
 /*!40000 ALTER TABLE `perch2_pages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -514,7 +517,7 @@ CREATE TABLE `perch2_settings` (
 
 LOCK TABLES `perch2_settings` WRITE;
 /*!40000 ALTER TABLE `perch2_settings` DISABLE KEYS */;
-INSERT INTO `perch2_settings` VALUES ('headerColour',0,'#ffffff'),('content_singlePageEdit',0,'1'),('helpURL',0,''),('siteURL',0,'/'),('hideBranding',0,'0'),('content_collapseList',0,'1'),('lang',0,'en-gb'),('update_2.2.9',0,'done'),('latest_version',0,'2.5.3'),('update_2.3.1',0,'done'),('update_2.4.4',0,'done'),('headerScheme',0,'light'),('content_frontend_edit',0,'0'),('dashboard',0,'0'),('content_hideNonEditableRegions',0,'0'),('on_sale_version',0,'2.6.5'),('update_2.5.3',0,'done'),('update_2.6.4',0,'done'),('update_2.6.5',0,'done');
+INSERT INTO `perch2_settings` VALUES ('headerColour',0,'#ffffff'),('content_singlePageEdit',0,'1'),('helpURL',0,''),('siteURL',0,'/'),('hideBranding',0,'0'),('content_collapseList',0,'1'),('lang',0,'en-gb'),('update_2.2.9',0,'done'),('latest_version',0,'2.5.3'),('update_2.3.1',0,'done'),('update_2.4.4',0,'done'),('headerScheme',0,'light'),('content_frontend_edit',0,'0'),('dashboard',0,'0'),('content_hideNonEditableRegions',0,'0'),('on_sale_version',0,'2.7.10'),('update_2.5.3',0,'done'),('update_2.6.4',0,'done'),('update_2.6.5',0,'done'),('update_2.7.10',0,'done');
 /*!40000 ALTER TABLE `perch2_settings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -627,7 +630,7 @@ CREATE TABLE `perch2_users` (
 
 LOCK TABLES `perch2_users` WRITE;
 /*!40000 ALTER TABLE `perch2_users` DISABLE KEYS */;
-INSERT INTO `perch2_users` VALUES (1,'{username}','{password}','2013-06-23 12:14:42','2014-09-16 13:30:16','2014-09-16 13:30:02','{firstname}','{lastname}','{email}',1,'9957bf181d012dc5ab48f6f1592d33a9',2,1);
+INSERT INTO `perch2_users` VALUES (1,'{username}','$P$BkeZrexrpIKOp64CFuJIjGTSbFBhe51','2013-06-23 12:14:42','2015-01-30 09:16:35','2015-01-30 09:16:19','{firstname}','{lastname}','{email}',1,'21a94452dab4663c2bab44939337bf9e',2,1);
 /*!40000 ALTER TABLE `perch2_users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -640,4 +643,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-09-16  6:36:35
+-- Dump completed on 2015-01-30  1:23:16
