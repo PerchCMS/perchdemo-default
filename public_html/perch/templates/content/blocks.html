@@ -1,0 +1,29 @@
+<perch:blocks>
+  <perch:block type="modules" label="Modules">
+    <h2><perch:content id="heading" type="text" label="Heading" required="true" title="true" /></h2>
+
+    <perch:repeater id="modulelist" label="Module content">
+      <perch:before>
+        <div class="modules">
+      </perch:before>
+        <div class="module">
+        <h3>
+          <perch:if exists="url"><a href="<perch:content id="url" type="text" label="Link URL" order="2" />"></perch:if>
+          <perch:content id="heading" type="text" label="Heading" required="true" order="1" title="true" />
+          <perch:if exists="url"></a></perch:if>
+        </h3>
+        <perch:content id="text" type="textarea" label="Text" editor="markitup" size="s" textile="true" order="3" />
+      </div>
+      <perch:after>
+        </div>
+      </perch:after>
+    </perch:repeater>
+
+  </perch:block>
+
+  <perch:block type="textblock" label="Text">
+     <perch:content id="text" type="textarea" label="Text content" textile="true" editor="markitup" />
+  </perch:block>
+
+
+</perch:blocks>
