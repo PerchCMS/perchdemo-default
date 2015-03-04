@@ -517,7 +517,7 @@ CREATE TABLE `perch2_settings` (
 
 LOCK TABLES `perch2_settings` WRITE;
 /*!40000 ALTER TABLE `perch2_settings` DISABLE KEYS */;
-INSERT INTO `perch2_settings` VALUES ('headerColour',0,'#ffffff'),('content_singlePageEdit',0,'1'),('helpURL',0,''),('siteURL',0,'/'),('hideBranding',0,'0'),('content_collapseList',0,'1'),('lang',0,'en-gb'),('update_2.2.9',0,'done'),('latest_version',0,'2.7.10'),('update_2.3.1',0,'done'),('update_2.4.4',0,'done'),('headerScheme',0,'light'),('content_frontend_edit',0,'0'),('dashboard',0,'0'),('content_hideNonEditableRegions',0,'0'),('on_sale_version',0,'2.7.10'),('update_2.5.3',0,'done'),('update_2.6.4',0,'done'),('update_2.6.5',0,'done'),('update_2.7.10',0,'done'),('update_2.8',0,'done');
+INSERT INTO `perch2_settings` VALUES ('headerColour',0,'#ffffff'),('content_singlePageEdit',0,'1'),('helpURL',0,''),('siteURL',0,'/'),('hideBranding',0,'0'),('content_collapseList',0,'1'),('lang',0,'en-gb'),('update_2.2.9',0,'done'),('latest_version',0,'2.7.10'),('update_2.3.1',0,'done'),('update_2.4.4',0,'done'),('headerScheme',0,'light'),('content_frontend_edit',0,'0'),('dashboard',0,'0'),('content_hideNonEditableRegions',0,'0'),('on_sale_version',0,'2.8.2'),('update_2.5.3',0,'done'),('update_2.6.4',0,'done'),('update_2.6.5',0,'done'),('update_2.7.10',0,'done'),('update_2.8',0,'done'),('update_2.8.2',0,'done');
 /*!40000 ALTER TABLE `perch2_settings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -630,7 +630,7 @@ CREATE TABLE `perch2_users` (
 
 LOCK TABLES `perch2_users` WRITE;
 /*!40000 ALTER TABLE `perch2_users` DISABLE KEYS */;
-INSERT INTO `perch2_users` VALUES (1,'{username}','$P$BkeZrexrpIKOp64CFuJIjGTSbFBhe51','2013-06-23 12:14:42','2015-03-01 17:56:43','2015-03-01 17:29:53','{firstname}','{lastname}','{email}',1,'5be82270be73603d659f28a4916c7508',2,1);
+INSERT INTO `perch2_users` VALUES (1,'{username}','$P$BkeZrexrpIKOp64CFuJIjGTSbFBhe51','2013-06-23 12:14:42','2015-03-04 07:58:34','2015-03-04 07:28:27','{firstname}','{lastname}','{email}',1,'f78cca66fe857007b842c3ab113b6add',2,1);
 /*!40000 ALTER TABLE `perch2_users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -643,4 +643,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-03-01 23:17:16
+-- Dump completed on 2015-03-04  0:02:37
