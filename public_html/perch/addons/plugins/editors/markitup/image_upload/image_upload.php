@@ -1,12 +1,25 @@
 <?php
     require('../../../../../runtime.php');
 
+    if (!class_exists('PerchAssets_Assets', false)) {
+        include_once(PERCH_CORE.'/apps/assets/PerchAssets_Assets.class.php');
+        include_once(PERCH_CORE.'/apps/assets/PerchAssets_Asset.class.php');
+    }
+
     if (PerchUtil::count($_FILES)) {
+
+        $Tag = new PerchXMLTag('<perch:content id="miu_image_upload_image" disable-asset-panel="true" detect-type="true" />');
+        $Tag->set('input_id', 'miu_image_upload_image');
+
         $API = new PerchAPI(1.0, 'miu_image_upload');
-
-        $is_image = true;
-        if ($_POST['image']=='false') $is_image = false;
-
+        
+        if ($_POST['image']=='false'){
+            $is_image = false;
+            $Tag->set('type', 'file');  
+        }else{
+            $is_image = true;
+            $Tag->set('type', 'image');
+        }
 
         /* -------- GET THE RESOURCE BUCKET TO USE ---------- */
         $bucket_name  = 'default';
@@ -15,79 +28,97 @@
             $bucket_name = $_POST['bucket'];
         }
 
-        $Perch = Perch::fetch();
-        $bucket = $Perch->get_resource_bucket($bucket_name);
+        $Tag->set('bucket', $bucket_name);
 
-        // test to see if image folder is writable
-        $bucket_writable = is_writable($bucket['file_path']);
-        
+       
         if ($is_image) {
             $width = false;
             if (isset($_POST['width'])) $width = (int)$_POST['width'];
+            $Tag->set('width', $width);
         
             $height = false;
             if (isset($_POST['height'])) $height = (int)$_POST['height'];
-        
+            $Tag->set('height', $height);
+
             $crop = false;
             if (isset($_POST['crop']) && $_POST['crop']=='true') $crop = true;
+            $Tag->set('crop', $crop);
             
             $quality = false;
             if (isset($_POST['quality'])) $quality = (int)$_POST['quality'];
+            $Tag->set('quality', $quality);
 
             $sharpen = false;
             if (isset($_POST['sharpen'])) $sharpen = (int)$_POST['sharpen'];
+            $Tag->set('sharpen', $sharpen);
 
-            $density = false;
-            if (isset($_POST['density'])) $density = (int)$_POST['density']; 
+            $density = 1;
+            if (isset($_POST['density'])) $density = (int)$_POST['density'];
+            $Tag->set('density', $density); 
 
-            $Image = $API->get('Image');
-
-            if ($quality) $Image->set_quality($quality);
-            if ($sharpen) $Image->set_sharpening($sharpen);
-            if ($density) $Image->set_density($density);
         }
+
+        $Assets  = new PerchAssets_Assets;
         
-        
-        foreach($_FILES as $file) {
-            if ($bucket_writable && (int) $file['size'] > 0 && $file['error']=='0') {
+        $message = false;
+        $assetID = false;
+        $Asset = false;
+               
+        $Form = new PerchForm('edit');
 
-                $filename = PerchUtil::tidy_file_name($file['name']);
-                if (strpos($filename, '.php')!==false) $filename .= '.txt'; // diffuse PHP files
-                $target = PerchUtil::file_path($bucket['file_path'].'/'.$filename);
+        $Resources = new PerchResources;
 
-                if (file_exists($target)) {                                        
-                    $dot = strrpos($filename, '.');
-                    $filename_a = substr($filename, 0, $dot);
-                    $filename_b = substr($filename, $dot);
+        $data = array();
+        $FieldType = PerchFieldTypes::get($Tag->type(), $Form, $Tag, array($Tag));
+        $var       = $FieldType->get_raw();
 
-                    $count = 1;
-                    while (file_exists(PerchUtil::file_path($bucket['file_path'].'/'.PerchUtil::tidy_file_name($filename_a.'-'.$count.$filename_b)))) {
-                        $count++;
-                    }
+        if (PerchUtil::count($var)) {
+            
+            $ids = $Resources->get_logged_ids();
+            $Resources->mark_group_as_library($ids);
+            $assetID = $ids[0];
+            $Asset = $Assets->find($assetID);
 
-                    $filename   = PerchUtil::tidy_file_name($filename_a . '-' . $count . $filename_b);
-                    $target     = PerchUtil::file_path($bucket['file_path'].'/'.$filename);
-
-                }
-                                            
-                PerchUtil::move_uploaded_file($file['tmp_name'], $target);
-    
-                if ($is_image) {
-                    $out = $Image->resize_image($target, $width, $height, $crop);
-
-                    if (is_array($out)) {
-                        echo $out['web_path'];
-                        exit;
-                    }
-                }else{
-                    echo $bucket['web_path'].'/'.$filename;
-                    exit;
-                }
-                
+            if (isset($_POST['miu_image_upload_title']) && $_POST['miu_image_upload_title']!='') {
+                $Asset->update(array('resourceTitle'=>$_POST['miu_image_upload_title']));    
             }
-        }
+            
+            $Asset->reindex();
 
+            if (PerchUtil::count($ids)) {
+
+                if (!PerchSession::is_set('resourceIDs')) {
+                    $logged_ids = array();
+                    PerchSession::set('resourceIDs', $logged_ids);
+                }else{
+                    $logged_ids = PerchSession::get('resourceIDs');
+                }
+
+                foreach($ids as $assetID) {
+                    if (!in_array($assetID, $logged_ids)) {
+                        $logged_ids[] = $assetID;
+                    }
+                }
+                PerchSession::set('resourceIDs', $logged_ids);
+            }
+
+
+            if ($is_image) {
+                $result = $Assets->get_resize_profile($Asset->id(), $width, $height, ($crop?'1':'0'), false, $density);
+                if ($result) {
+                    echo $result['web_path'];
+                }else{
+                    echo $Asset->web_path();
+                }
+                exit;
+            }else{
+                echo $Asset->web_path();
+                exit;
+            }
+
+            
+        }
+       
     }
 
     echo 'FAIL';
-?>

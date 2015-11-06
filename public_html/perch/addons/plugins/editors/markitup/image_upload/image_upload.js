@@ -16,8 +16,8 @@ miu.ImageUpload = function()
 			}
 			
 			form.css({
-				'top': textarea.position().top+80,
-				'left': textarea.closest('.markItUpContainer').find('li.'+button_class).position().left-277
+				'top': textarea.position().top+55,
+				'left': textarea.closest('.markItUpContainer').find('li.'+button_class).position().left-270
 			});
 			
 			
@@ -72,6 +72,8 @@ miu.ImageUpload = function()
 			
 			form.attr('action', markItUp.root+'image_upload/image_upload.php');
 			
+
+
 			
 			form.ajaxForm({
 				beforeSubmit: function(){
@@ -120,7 +122,7 @@ miu.ImageUpload = function()
 									var s_alt = '[]';
 									var s_class = '';
 									if (alt) s_alt = '['+alt+']';
-									if (classname) s_class = '.'+classname;
+									if (classname) s_class = '{.'+classname+'}';
 									output = '!'+s_alt+'('+r+')'+s_class;
 									break;
 
