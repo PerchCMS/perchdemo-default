@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.43, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.47, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: db_demo_default
 -- ------------------------------------------------------
--- Server version	5.5.43-0+deb7u1
+-- Server version	5.5.47-0+deb7u1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -430,6 +430,7 @@ CREATE TABLE `perch2_resources` (
   KEY `idx_type` (`resourceType`),
   KEY `idx_awol` (`resourceAWOL`),
   KEY `idx_library` (`resourceInLibrary`),
+  KEY `idx_list` (`resourceParentID`,`resourceKey`,`resourceAWOL`),
   FULLTEXT KEY `idx_search` (`resourceTitle`)
 ) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -517,8 +518,34 @@ CREATE TABLE `perch2_settings` (
 
 LOCK TABLES `perch2_settings` WRITE;
 /*!40000 ALTER TABLE `perch2_settings` DISABLE KEYS */;
-INSERT INTO `perch2_settings` VALUES ('headerColour',0,'#ffffff'),('content_singlePageEdit',0,'1'),('helpURL',0,''),('siteURL',0,'/'),('hideBranding',0,'0'),('content_collapseList',0,'1'),('lang',0,'en-gb'),('update_2.2.9',0,'done'),('latest_version',0,'2.8.8'),('update_2.3.1',0,'done'),('update_2.4.4',0,'done'),('headerScheme',0,'light'),('content_frontend_edit',0,'0'),('dashboard',0,'0'),('content_hideNonEditableRegions',0,'0'),('on_sale_version',0,'2.8.15'),('update_2.5.3',0,'done'),('update_2.6.4',0,'done'),('update_2.6.5',0,'done'),('update_2.7.10',0,'done'),('update_2.8',0,'done'),('update_2.8.2',0,'done'),('update_2.8.8',0,'done'),('update_2.8.15',0,'done');
+INSERT INTO `perch2_settings` VALUES ('headerColour',0,'#ffffff'),('content_singlePageEdit',0,'1'),('helpURL',0,''),('siteURL',0,'/'),('hideBranding',0,'0'),('content_collapseList',0,'1'),('lang',0,'en-gb'),('update_2.2.9',0,'done'),('latest_version',0,'2.8.15'),('update_2.3.1',0,'done'),('update_2.4.4',0,'done'),('headerScheme',0,'light'),('content_frontend_edit',0,'0'),('dashboard',0,'0'),('content_hideNonEditableRegions',0,'0'),('on_sale_version',0,'2.8.29'),('update_2.5.3',0,'done'),('update_2.6.4',0,'done'),('update_2.6.5',0,'done'),('update_2.7.10',0,'done'),('update_2.8',0,'done'),('update_2.8.2',0,'done'),('update_2.8.8',0,'done'),('update_2.8.15',0,'done'),('update_2.8.29',0,'done');
 /*!40000 ALTER TABLE `perch2_settings` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `perch2_user_passwords`
+--
+
+DROP TABLE IF EXISTS `perch2_user_passwords`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `perch2_user_passwords` (
+  `passwordID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `userID` int(10) unsigned NOT NULL,
+  `userPassword` varchar(255) NOT NULL DEFAULT '',
+  `passwordLastUsed` datetime NOT NULL DEFAULT '2000-01-01 00:00:00',
+  PRIMARY KEY (`passwordID`),
+  KEY `idx_user` (`userID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `perch2_user_passwords`
+--
+
+LOCK TABLES `perch2_user_passwords` WRITE;
+/*!40000 ALTER TABLE `perch2_user_passwords` DISABLE KEYS */;
+/*!40000 ALTER TABLE `perch2_user_passwords` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -621,6 +648,8 @@ CREATE TABLE `perch2_users` (
   `userMasterAdmin` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `userPasswordToken` char(255) NOT NULL DEFAULT 'expired',
   `userPasswordTokenExpires` datetime NOT NULL DEFAULT '2015-01-01 00:00:00',
+  `userLastFailedLogin` datetime DEFAULT NULL,
+  `userFailedLoginAttempts` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`userID`),
   KEY `idx_enabled` (`userEnabled`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
@@ -632,7 +661,7 @@ CREATE TABLE `perch2_users` (
 
 LOCK TABLES `perch2_users` WRITE;
 /*!40000 ALTER TABLE `perch2_users` DISABLE KEYS */;
-INSERT INTO `perch2_users` VALUES (1,'{username}','$P$BkeZrexrpIKOp64CFuJIjGTSbFBhe51','2013-06-23 12:14:42','2015-11-06 20:27:14','2015-11-06 20:26:52','{firstname}','{lastname}','{email}',1,'c388f42f02674b253686c662ba6d7da3',2,1,'expired','2015-01-01 00:00:00');
+INSERT INTO `perch2_users` VALUES (1,'{username}','$P$BkeZrexrpIKOp64CFuJIjGTSbFBhe51','2013-06-23 12:14:42','2016-04-10 05:57:48','2016-04-10 05:57:41','{firstname}','{lastname}','{email}',1,'b85cb9d3d941027e2bf2ec1b84e4c685',2,1,'expired','2015-01-01 00:00:00',NULL,0);
 /*!40000 ALTER TABLE `perch2_users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -645,4 +674,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-06 12:31:33
+-- Dump completed on 2016-04-09 23:00:22
